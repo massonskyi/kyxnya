@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Акция: Домашняя пицца на рисовом хлебце</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-slide { animation: slideIn 1s ease-out; }
+        .ticker-item { animation: ticker 20s linear infinite; }
+        .ticker-container {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+        .ticker-content {
+            display: inline-block;
+            animation: ticker 20s linear infinite;
+        }
+        .ticker-content:hover {
+            animation-play-state: paused;
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .logo-font {
+            font-family: 'Comfortaa', cursive;
+        }
+        .recipe-tab.active-tab {
+            background-color: #f87171;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <!-- Бегущая строка с рекламной акцией -->
+    <div class="bg-pink-300 text-white p-4 h-16 flex items-center">
+        <div class="ticker-container w-full">
+            <div class="ticker-content text-xl">
+                🍕 Специальная акция: Домашняя пицца на рисовом хлебце — всего за 349 руб! | 🎉 Бесплатная доставка при заказе от 2-х пицц
+            </div>
+        </div>
+    </div>
+
+    <header class="bg-white shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <img src="../assets/images/logo.png" alt="Кулинарный мир" class="w-16 h-16 object-cover md:w-20 md:h-20">
+            <div class="text-2xl font-bold text-pink-600 animate-slide">Кулинарный мир</div>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="../index.html" class="text-gray-700 hover:text-red-600 transition transform hover:scale-110">Главная</a></li>
+                <li><a href="../index.html" class="text-gray-700 hover:text-red-600 transition transform hover:scale-110">История еды</a></li>
+                <li><a href="../index.html" class="text-gray-700 hover:text-red-600 transition transform hover:scale-110">Блог</a></li>
+                <li><a href="../index.html" class="text-gray-700 hover:text-red-600 transition transform hover:scale-110">Мастер классы</a></li>
+            </ul>
+            <div class="md:hidden">
+                <button id="menu-button" class="text-gray-700 hover:text-pink-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+        <section class="bg-white p-6 rounded-lg shadow-md animate-slide">
+            <h2 class="text-2xl font-semibold mb-4 text-pink-600">Акция: Домашняя пицца на рисовом хлебце</h2>
+            <div class="space-y-4">
+                <p class="text-gray-700">Попробуйте нашу необычную и вкусную пиццу на рисовом хлебце! Эта пицца идеально подойдет для тех, кто хочет насладиться любимым блюдом, но без лишних калорий. Мы используем только свежие ингредиенты, а рисовый хлебец делает её особенно легкой и воздушной.</p>
+                <p class="text-gray-700">В рамках акции, мы предлагаем вам пиццу по специальной цене — всего за 349 рублей. А при заказе двух и более пицц, доставка будет абсолютно бесплатной! Это предложение действует ограниченное время, не упустите шанс!</p>
+                <div class="flex items-center">
+                    <img src="../assets/images/recipe3.jpg" alt="Домашняя пицца на рисовом хлебце" class="w-32 h-32 object-cover rounded-lg mr-6">
+                    <div>
+                        <h3 class="font-bold text-lg text-pink-600">Специальное предложение</h3>
+                        <p class="text-gray-700">Наши пиццы на рисовом хлебце — это не только вкусно, но и полезно. Идеальный выбор для легкого обеда или ужина с семьей и друзьями. Подарите себе настоящий гастрономический опыт!</p>
+                    </div>
+                </div>
+                <button class="bg-pink-600 text-white px-6 py-2 rounded hover:bg-pink-700">Заказать сейчас</button>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-white mt-12 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600">&copy; 2024 Кулинарный мир. Все права защищены.</p>
+        </div>
+    </footer>
+    <script>
+        // Получаем кнопку меню и список навигации
+        const menuButton = document.getElementById('menu-button');
+        const navList = document.querySelector('nav ul');
+
+        // Обработчик клика по кнопке
+        menuButton.addEventListener('click', () => {
+            // Переключаем видимость меню
+            navList.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

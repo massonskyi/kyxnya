@@ -1,0 +1,234 @@
+.drawing {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+}
+
+.animal {
+    width: 200px;
+    height: 140px;
+    background: radial-gradient(circle at 30% 30%, #d0d0d0, #8c8c8c, #4f4f4f);
+    border-radius: 50%;
+    position: relative;
+    z-index: 3; /* Устанавливаем основной овал выше */
+}
+
+.tail {
+    width: 30px;
+    height: 120px;
+    background: linear-gradient(to top, #8c8c8c, #ffffff);
+    border-radius: 50%;
+    position: absolute;
+    top: -70px; /* Поднимает овал выше */
+    left: -20px; /* Смещает его слегка налево */
+    transform: rotate(-15deg); /* Наклон под 15 градусов */
+    z-index: 2;
+    border: 2px solid #8c8c8c; /* Добавляем серую обводку */
+}
+
+.face {
+    width: 100px; /* Диаметр круга в 2 раза меньше основного овала */
+    height: 100px; /* Диаметр круга */
+    background: #4f4f4f; /* Тёмно-серый цвет */
+    border-radius: 50%; /* Делаем круг */
+    position: absolute;
+    top: 33%; /* Ставим круг выше центра овала */
+    left: 72%; /* Смещаем круг вправо */
+    transform: translate(-50%, -50%); /* Центрируем круг относительно заданной позиции */
+    z-index: 4; /* Располагаем круг выше основного овала */
+}
+
+/* Тёмно-серые треугольники */
+.leg1,
+.leg2 {
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 50px solid #4f4f4f; /* Тёмно-серый цвет */
+    z-index: 1; /* На заднем фоне */
+}
+
+.leg1 {
+    bottom: 38px; /* Смещаем под овал */
+    left: 40px;
+    transform: rotate(-18deg); 
+}
+
+.leg2 {
+    bottom: 35px;
+    left: 130px;
+    transform: rotate(-15deg); 
+}
+
+/* Светло-серые треугольники */
+.leg3,
+.leg4 {
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 50px solid #8c8c8c; /* Светло-серый цвет */
+    z-index: 2; /* Перед тёмными треугольниками, но под овалом */
+}
+
+.leg3 {
+    bottom: 40px;
+    left: 18px;
+}
+
+.leg4 {
+    bottom: 25px;
+    left: 118px;
+    transform: rotate(-15deg); 
+}
+
+.pump {
+    width: 0;
+    height: 0;
+    position: absolute;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 10px solid black; /* Чёрный цвет */
+    top: 38%; /* Центр по вертикали */
+    left: 73%; /* Центр по горизонтали */
+    transform: translate(-50%, -50%); /* Центрируем и переворачиваем основанием вверх */
+    z-index: 5; /* На переднем плане */
+}
+
+
+.whiskers {
+    position: absolute;
+    top: 35%; /* Положение ниже центра круга */
+    left: 69%; /* Смещаем немного правее */
+    transform: translate(-50%, -50%); /* Центрирование элемента */
+    width: 20px; /* Общая ширина угла */
+    height: 20px; /* Общая высота угла */
+    z-index: 5; /* На переднем плане */
+}
+
+.whiskers::before,
+.whiskers::after {
+    content: '';
+    position: absolute;
+    background: black; /* Чёрный цвет линий */
+    width: 2px; /* Толщина линии */
+    height: 20px; /* Длина каждой линии */
+    top: 100%; /* Линии начинаются снизу контейнера */
+}
+
+.whiskers::before {
+    transform: rotate(45deg); /* Наклон вправо */
+    left: 90%; /* Пересечение в центре */
+    transform-origin: top center; /* Точка вращения — верхний центр */
+}
+
+.whiskers::after {
+    transform: rotate(-45deg); /* Наклон влево */
+    right: 10%; /* Пересечение в центре */
+    transform-origin: top center; /* Точка вращения — верхний центр */
+}
+
+.eyes {
+    position: absolute;
+    top: 30%; /* Центрируем по вертикали внутри круга */
+    left: 73%; /* Центрируем по горизонтали */
+    transform: translate(-50%, -50%); /* Точная центровка */
+    display: flex; /* Используем флекс для расположения полукругов */
+    gap: 20px; /* Расстояние между полукругами */
+    z-index: 5; /* На переднем плане */
+}
+
+.eyes::before,
+.eyes::after {
+    content: '';
+    width: 20px; /* Ширина полукруга */
+    height: 10px; /* Высота полукруга */
+    background: black; /* Цвет полукруга */
+    border-top-left-radius: 20px; /* Делаем верхний левый угол кругом */
+    border-top-right-radius: 20px; /* Делаем верхний правый угол кругом */
+    border-bottom-left-radius: 0; /* Нижний левый угол остаётся острым */
+    border-bottom-right-radius: 0; /* Нижний правый угол остаётся острым */
+}
+
+
+.cat-ears {
+    position: absolute;
+    top: 17%; /* Смещение ниже середины круга */
+    left: 72%; /* Центрирование относительно круга */
+    transform: translate(-50%, -50%); /* Точная центровка контейнера */
+    display: flex; /* Расположение полукругов рядом */
+    gap: 30px; /* Расстояние между полукругами */
+    z-index: 5; /* На переднем плане */
+
+}
+
+.cat-ears::before,
+.cat-ears::after {
+    content: '';
+    width: 40px; /* Ширина равна высоте для создания круга */
+    height: 45px; /* Высота равна ширине для создания круга */
+    background: radial-gradient(#ffffff 10%, #d0d0d0 25%, #8c8c8c 40%); /* Градиент: белый внутри, серый снаружи */
+    border-radius: 50%; /* Создаём круг */
+    clip-path: ellipse(100% 50% at 50% 0%); /* Обрезаем фигуру до полукруга */
+}
+
+/* Левый полукруг с наклоном влево */
+.cat-ears::before {
+    transform: rotate(-45deg); /* Наклон влево */
+}
+
+/* Правый полукруг с наклоном вправо */
+.cat-ears::after {
+    transform: rotate(45deg); /* Наклон вправо */
+}
+
+.drawing:hover{
+    animation: jump .5s ease-in-out infinite;
+}
+
+.drawing:hover .tail{
+    animation: wave .5s ease-in-out infinite;
+}
+
+@keyframes jump {
+0%, 100% {
+    transform: translateY(0); /* Исходная позиция */
+}
+50% {
+    transform: translateY(-10px); /* Подпрыгнуть вверх на 10px */
+}
+}
+
+@keyframes wave {
+    0% {
+      transform: rotate(-20 deg);
+    }
+    12.5% {
+      transform: rotate(-26deg);
+    }
+    25% {
+      transform: rotate(-32deg);
+    }
+    37.5% {
+      transform: rotate(-35deg);
+    }
+    50% {
+      transform: rotate(-38deg);
+    }
+    62.5% {
+      transform: rotate(-35deg);
+    }
+    75% {
+      transform: rotate(-32deg);
+    }
+    87.5% {
+      transform: rotate(-26deg);
+    }
+    100% {
+      transform: rotate(-20deg);
+    }
+  }

@@ -1,0 +1,136 @@
+/* Общие стили */
+ 
+  /* Игровая зона */
+  #game-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 100vw; */
+    /* height: 100vh; */
+  }
+  
+  #game-zone {
+    width: 700px;
+    height: 430px;
+    background-color: #ffe4e1;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    border: 5px solid #ffb6c1;
+  }
+  
+  /* Сообщение о победе */
+  #congrats-message {
+    display: none;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #32cd32;
+    color: #fff;
+    border-radius: 10px;
+    font-size: 20px;
+  }
+  
+  /* Фигуры */
+.draggable {
+    position: absolute;
+    cursor: grab;
+    transform-origin: center;
+  }
+  
+.small-triangle {
+    width: 0;
+    height: 0;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom: 40px solid #90ee90;
+    top: 20px;
+    left: 20px;
+    z-index: 3;
+  }
+  
+.medium-triangle {
+    width: 0;
+    height: 0;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom: 60px solid #228b22;
+    top: 90px;
+    left: 50px;
+    z-index: 2;
+  }
+  
+.large-triangle {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 80px solid #006400;
+    top: 180px;
+    left: 100px;
+    z-index: 1;
+  }
+  
+.tree-trunk {
+    width: 20px;
+    height: 40px;
+    background-color: #8b4513;
+    top: 290px;
+    left: 125px;
+  }
+  
+.house-square {
+    width: 100px;
+    height: 100px;
+    background-color: #ffa07a;
+    border: 3px solid #ff4500;
+    top: 20px;
+    left: 200px;
+  }
+  
+  
+.window {
+    width: 40px;
+    height: 40px;
+    background-color: #87cefa;
+    border: 3px solid #4682b4;
+    position: relative;
+    top: 60px;
+    left: 230px;
+  }
+  
+.window::before,
+.window::after {
+    content: "";
+    position: absolute;
+    background-color: #4682b4;
+  }
+  
+.window::before {
+    width: 2px;
+    height: 100%;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
+  
+.window::after {
+    height: 2px;
+    width: 100%;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+  }
+  
+.roof {
+    width: 120px;
+    height: 80px;
+    background: burlywood;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    border: 3px solid brown;
+}
+
+
+

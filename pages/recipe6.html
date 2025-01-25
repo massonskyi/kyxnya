@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Здоровое питание: Малиновый чиа пуддинг</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f7fafc;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        @keyframes ticker {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+        .animate-slide { animation: slideIn 1s ease-out; }
+        .ticker-item { animation: ticker 20s linear infinite; }
+        .ticker-container {
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+        }
+        .ticker-content {
+            display: inline-block;
+            animation: ticker 20s linear infinite;
+        }
+        .ticker-content:hover {
+            animation-play-state: paused;
+        }
+        .animate-slide { animation: slideIn 1s ease-out; }
+        .animate-slide { animation: slideIn 1s ease-out; }
+        .header-bg {
+            background-color: #f7c7d4;
+        }
+        .header-text {
+            color: #9b4d96;
+        }
+        .highlight-text {
+            color: #9b4d96;
+        }
+        .recipe-card {
+            background-color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+        .recipe-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Бегущая строка с рекламной акцией -->
+    <div class="bg-pink-300 text-white p-4 h-16 flex items-center">
+        <div class="ticker-container w-full">
+            <div class="ticker-content text-xl">
+                🥄 Здоровое питание для вашего тела | Малиновый чиа пуддинг — полезный завтрак!
+            </div>
+        </div>
+    </div>
+
+    <header class="header-bg text-white py-8">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <img src="../assets/images/logo.png" alt="Кулинарный мир" class="w-16 h-16 object-cover md:w-20 md:h-20">
+            <div class="text-2xl font-bold text-pink-600 animate-slide">Кулинарный мир</div>
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="../index.html" class="text-gray-700 hover:text-red-600 transition transform hover:scale-110">Главная</a></li>
+                <li><a href="../index.html" class="text-gray-700 hover:text-red-600 transition transform hover:scale-110">История еды</a></li>
+                <li><a href="../index.html" class="text-gray-700 hover:text-red-600 transition transform hover:scale-110">Блог</a></li>
+                <li><a href="../index.html" class="text-gray-700 hover:text-red-600 transition transform hover:scale-110">Мастер классы</a></li>
+            </ul>
+            <div class="md:hidden">
+                <button id="menu-button" class="text-gray-700 hover:text-pink-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <div class="container mx-auto px-6 text-center">
+            <h1 class="text-4xl font-bold header-text animate-slide">Здоровое питание с Малиновым чиа пуддингом</h1>
+            <p class="text-xl mt-4">Пуддинг из чиа — идеальный выбор для тех, кто заботится о своем здоровье и фигуре.</p>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+        <section class="recipe-card animate-slide">
+            <h2 class="text-2xl font-semibold text-pink-600 mb-4">История Малинового чиа пуддинга</h2>
+            <p class="text-gray-700 mb-6">Малиновый чиа пуддинг — это не просто вкусный, но и невероятно полезный десерт, который стал популярным благодаря своему богатому составу. Чиа-семена, которые являются основным ингредиентом этого блюда, содержат большое количество клетчатки, омега-3 жирных кислот и антиоксидантов. Малинка, в свою очередь, добавляет не только яркий вкус, но и дополнительные витамины и минералы.</p>
+            <p class="text-gray-700 mb-6">Этот пуддинг — это также отличное средство для поддержания уровня сахара в крови и укрепления иммунной системы. Простота в приготовлении и идеальная текстура делают его любимым завтраком и перекусом для многих, кто ценит здоровое питание.</p>
+            <img src="../assets/images/recipe6.jpg" alt="Малиновый чиа пуддинг" class="recipe-image mb-6">
+            <h3 class="text-xl font-semibold text-pink-600 mb-4">Как приготовить Малиновый чиа пуддинг?</h3>
+            <p class="text-gray-700 mb-6">Для того чтобы приготовить малиновый чиа пуддинг, вам понадобятся следующие ингредиенты:</p>
+            <ul class="list-disc pl-6 mb-6">
+                <li>3 столовые ложки семян чиа</li>
+                <li>200 мл миндального молока (или другого растительного молока)</li>
+                <li>1 столовая ложка меда или другого подсластителя</li>
+                <li>100 г свежих или замороженных малины</li>
+                <li>1 чайная ложка ванильного экстракта (по желанию)</li>
+            </ul>
+            <p class="text-gray-700 mb-6">Процесс приготовления прост: смешайте чиа, молоко, мед и ваниль, оставьте смесь на ночь в холодильнике. Утром добавьте малину и наслаждайтесь здоровым и вкусным завтраком!</p>
+            <button class="bg-pink-600 text-white px-6 py-2 rounded hover:bg-pink-700">Попробовать рецепт</button>
+        </section>
+
+        <section class="mt-12">
+            <h2 class="text-2xl font-semibold text-pink-600 mb-4">Почему стоит выбрать чиа пуддинг?</h2>
+            <p class="text-gray-700 mb-6">Чиа пуддинг — это не только вкусно, но и полезно. Вот несколько причин, почему стоит включить его в ваш рацион:</p>
+            <ul class="list-disc pl-6 mb-6">
+                <li><strong>Высокое содержание омега-3</strong>: Семена чиа богаты омега-3 жирными кислотами, которые полезны для сердечно-сосудистой системы.</li>
+                <li><strong>Обогащает рацион клетчаткой</strong>: Чиа являются отличным источником клетчатки, что способствует улучшению пищеварения.</li>
+                <li><strong>Регуляция уровня сахара</strong>: Чиа помогает стабилизировать уровень сахара в крови и поддерживать нормальный обмен веществ.</li>
+                <li><strong>Антиоксиданты</strong>: Малинка в пуддинге является отличным источником витаминов и антиоксидантов, которые помогают бороться со свободными радикалами.</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="bg-white mt-12 py-8">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-600">&copy; 2024 Кулинарный мир. Все права защищены.</p>
+        </div>
+    </footer>
+    <script>
+        // Получаем кнопку меню и список навигации
+        const menuButton = document.getElementById('menu-button');
+        const navList = document.querySelector('nav ul');
+
+        // Обработчик клика по кнопке
+        menuButton.addEventListener('click', () => {
+            // Переключаем видимость меню
+            navList.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Кулинарный мир</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @keyframes slideIn {
+        from {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+      @keyframes ticker {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(-100%);
+        }
+      }
+      .animate-slide {
+        animation: slideIn 1s ease-out;
+      }
+      .ticker-item {
+        animation: ticker 20s linear infinite;
+      }
+      .ticker-container {
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+      }
+      .ticker-content {
+        display: inline-block;
+        animation: ticker 20s linear infinite;
+      }
+      .ticker-content:hover {
+        animation-play-state: paused;
+      }
+      body {
+        font-family: "Montserrat", sans-serif;
+      }
+      .logo-font {
+        font-family: "Comfortaa", cursive;
+      }
+      .recipe-tab.active-tab {
+        background-color: #f87171;
+        color: white;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100">
+    <!-- Бегущая строка новостей -->
+    <div class="bg-red-600 text-white p-4 h-16 flex items-center">
+      <div class="ticker-container w-full">
+        <div class="ticker-content text-xl">
+          🍽️ Новый мастер-класс по итальянской кухне | 🥘 Открытие кулинарной
+          школы | 🍰 Конкурс кондитерского искусства | 🍲 Специальные курсы от
+          шеф-поваров | 🥗 Кулинарные туры по миру
+        </div>
+      </div>
+    </div>
+
+    <header class="bg-white shadow-md">
+      <nav
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <img
+          src="assets/images/logo.png"
+          alt="Кулинарный мир"
+          class="w-16 h-16 object-cover md:w-20 md:h-20"
+        />
+        <div class="text-2xl font-bold text-red-600 animate-slide">
+          Кулинарный мир
+        </div>
+        <ul class="hidden md:flex space-x-6">
+          <li>
+            <a
+              href="#"
+              class="text-gray-700 hover:text-red-600 transition transform hover:scale-110"
+              >Рецепты</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-gray-700 hover:text-red-600 transition transform hover:scale-110"
+              >История еды</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-gray-700 hover:text-red-600 transition transform hover:scale-110"
+              >Блог</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-gray-700 hover:text-red-600 transition transform hover:scale-110"
+              >Контакты</a
+            >
+          </li>
+        </ul>
+        <div class="md:hidden">
+          <button
+            id="menu-button"
+            class="text-gray-700 hover:text-red-600 focus:outline-none"
+          >
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+      </nav>
+      <div id="mobile-menu" class="hidden md:hidden">
+        <ul class="flex flex-col space-y-2 px-6 py-4 bg-white shadow-md">
+          <li>
+            <a
+              href="#"
+              class="text-gray-700 hover:text-red-600 transition transform hover:scale-110"
+              >Рецепты</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-gray-700 hover:text-red-600 transition transform hover:scale-110"
+              >История еды</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-gray-700 hover:text-red-600 transition transform hover:scale-110"
+              >Блог</a
+            >
+          </li>
+          <li>
+            <a
+              href="#"
+              class="text-gray-700 hover:text-red-600 transition transform hover:scale-110"
+              >Контакты</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="container mx-auto px-6 py-8">
+      <!-- Популярные рецепты с анимацией -->
+      <section class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white p-6 rounded-lg shadow-md animate-slide">
+          <h2 class="text-2xl font-semibold mb-4 text-red-600">
+            Популярные рецепты
+          </h2>
+          <div class="space-y-4">
+            <a href="pages/recipe1.html">
+              <div
+                class="flex items-center hover:bg-gray-50 transition p-2 rounded-lg"
+              >
+                <img
+                  src="assets/images/recipe1.jpg"
+                  alt="Рецепт"
+                  class="w-20 h-20 object-cover rounded-lg mr-4 transform hover:scale-110 transition"
+                />
+                <div>
+                  <h3 class="font-bold">Шаверма в листе салата</h3>
+                  <p class="text-gray-600">
+                    Классический русский рецепт с секретами бабушки
+                  </p>
+                </div>
+              </div>
+            </a>
+            <a href="pages/recipe3.html">
+              <div
+                class="flex items-center hover:bg-gray-50 transition p-2 rounded-lg"
+              >
+                <img
+                  src="assets/images/recipe3.jpg"
+                  alt="Рецепт"
+                  class="w-20 h-20 object-cover rounded-lg mr-4 transform hover:scale-110 transition"
+                />
+                <div>
+                  <h3 class="font-bold">Пицца на рисовом хлебце</h3>
+                  <p class="text-gray-600">Домашний рецепт с тонкостями</p>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- История еды с анимацией -->
+        <div
+          class="bg-white p-6 rounded-lg shadow-md animate-slide last-history"
+        >
+          <h2 class="text-2xl font-semibold mb-4 text-red-600">История еды</h2>
+          <article>
+            <h3 class="font-bold mb-2">Происхождение салата с арбузом</h3>
+            <p class="text-gray-700">
+              🌞 Когда лето в разгаре, а на столе хочется чего-то лёгкого и
+              необычного, арбузный салат становится идеальным выбором. Но вы
+              задумывались, откуда появилась эта сочная идея? Мы расскажем вам
+              историю блюда, которое стало символом жарких дней и ярких
+              вкусов!...
+            </p>
+            <a
+              href="pages/recipe5.html"
+              class="text-red-600 hover:underline transition transform hover:translate-x-2"
+              >Читать далее →</a
+            >
+          </article>
+        </div>
+      </section>
+
+      <!-- Последние статьи с анимацией -->
+      <section class="mt-12 last-blog">
+        <h2
+          class="text-3xl font-bold text-center mb-8 text-red-600 animate-slide"
+        >
+          Последние статьи
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div
+            class="bg-white p-4 rounded-lg shadow-md transform transition hover:scale-105"
+          >
+            <img
+              src="assets/images/recipe5.jpg"
+              alt="Статья"
+              class="w-full h-48 object-cover rounded-lg mb-4"
+            />
+            <h3 class="font-bold mb-2">Секреты итальянской кухни</h3>
+            <p class="text-gray-600 mb-4">
+              Откройте для себя традиционные рецепты, техники приготовления и
+              культуру питания...
+            </p>
+            <a href="pages/recipe2.html" class="text-red-600 hover:underline"
+              >Читать</a
+            >
+          </div>
+          <div
+            class="bg-white p-4 rounded-lg shadow-md transform transition hover:scale-105"
+          >
+            <img
+              src="assets/images/recipe6.jpg"
+              alt="Статья"
+              class="w-full h-48 object-cover rounded-lg mb-4"
+            />
+            <h3 class="font-bold mb-2">Здоровое питание</h3>
+            <p class="text-gray-600 mb-4">
+              Полезные советы, рецепты и научный подход к правильному питанию...
+            </p>
+            <a href="pages/recipe6.html" class="text-red-600 hover:underline"
+              >Читать</a
+            >
+          </div>
+          <div
+            class="bg-white p-4 rounded-lg shadow-md transform transition hover:scale-105"
+          >
+            <img
+              src="assets/images/recipe8.jpg"
+              alt="Статья"
+              class="w-full h-48 object-cover rounded-lg mb-4"
+            />
+            <h3 class="font-bold mb-2">Кулинарные традиции мира</h3>
+            <p class="text-gray-600 mb-4">
+              Увлекательное путешествие по кулинарным традициям разных стран и
+              континентов...
+            </p>
+            <a href="pages/recipe8.html" class="text-red-600 hover:underline"
+              >Читать</a
+            >
+          </div>
+        </div>
+      </section>
+      <section class="mb-12 px-6 py-8 master-class-block">
+        <h2 class="text-3xl font-bold text-center mb-8 text-red-600 logo-font">
+          Мастер-классы
+        </h2>
+        <div class="grid md:grid-cols-3 gap-6">
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="font-bold text-xl mb-4">Задание 2. Рисунок CSS</h3>
+            <p class="text-gray-600 mb-4">
+              Научитесь готовить настоящую картинку с помощью стилевой таблицы
+              pic.css
+            </p>
+            <a
+              href="pages/task2.html"
+              class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+              >Записаться</a
+            >
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="font-bold text-xl mb-4">Задание 3. Flexbox</h3>
+            <p class="text-gray-600 mb-4">
+              Секреты идеального flexbox'a и самых вкусных картинок
+            </p>
+            <a
+              href="pages/task3.html"
+              class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+              >Записаться</a
+            >
+          </div>
+
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="font-bold text-xl mb-4">Задание 4. DOM</h3>
+            <p class="text-gray-600 mb-4">
+              Интенсив по приготовлению слов, слов и еще раз слов?
+            </p>
+            <a
+              href="pages/task4.html"
+              class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+              >Записаться</a
+            >
+          </div>
+          <div class="bg-white p-6 rounded-lg shadow-md">
+            <h3 class="font-bold text-xl mb-4">Задание 5. Перетаскивание объектов</h3>
+            <p class="text-gray-600 mb-4">
+              Вопрос не в том, любите ли вы русскую кухню или шаверму в зелени, вопрос лишь в том, как быстро вы соберете картинку
+            </p>
+            <a href="pages/task5.html"
+              class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+            >
+              Записаться
+        </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Переключаемые списки рецептов -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold text-center mb-8 text-red-600 logo-font">
+          Рецепты
+        </h2>
+        <div class="flex justify-center mb-6">
+          <button
+            onclick="showRecipes('russian')"
+            class="mx-2 px-4 py-2 recipe-tab active-tab"
+            data-category="russian"
+          >
+            Русская кухня
+          </button>
+          <button
+            onclick="showRecipes('italian')"
+            class="mx-2 px-4 py-2 recipe-tab"
+            data-category="italian"
+          >
+            Итальянская кухня
+          </button>
+          <button
+            onclick="showRecipes('asian')"
+            class="mx-2 px-4 py-2 recipe-tab"
+            data-category="asian"
+          >
+            Азиатская кухня
+          </button>
+        </div>
+        <div id="recipeList" class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <!-- Рецепты будут динамически загружаться через JavaScript -->
+        </div>
+      </section>
+
+      <!-- Опросник -->
+      <section class="mb-12">
+        <div class="bg-white p-8 rounded-lg shadow-md">
+          <h2 class="text-2xl font-bold mb-6 text-red-600 logo-font">
+            Опрос о кулинарных предпочтениях
+          </h2>
+          <form>
+            <div class="mb-4">
+              <label class="block mb-2"
+                >Какая кухня вам нравится больше всего?</label
+              >
+              <select class="w-full p-2 border rounded">
+                <option>Русская</option>
+                <option>Итальянская</option>
+                <option>Азиатская</option>
+                <option>Другая</option>
+              </select>
+            </div>
+            <div class="mb-4">
+              <label class="block mb-2">Как часто вы готовите дома?</label>
+              <div>
+                <label class="inline-flex items-center mr-4">
+                  <input type="radio" name="cookingFrequency" value="daily" />
+                  <span class="ml-2">Каждый день</span>
+                </label>
+                <label class="inline-flex items-center mr-4">
+                  <input type="radio" name="cookingFrequency" value="weekly" />
+                  <span class="ml-2">Несколько раз в неделю</span>
+                </label>
+                <label class="inline-flex items-center">
+                  <input type="radio" name="cookingFrequency" value="rarely" />
+                  <span class="ml-2">Редко</span>
+                </label>
+              </div>
+            </div>
+            <button
+              type="submit"
+              class="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700"
+            >
+              Отправить
+            </button>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-white mt-12 py-8">
+      <div class="container mx-auto px-6 text-center">
+        <p class="text-gray-600">
+          &copy; 2024 Кулинарный мир. Все права защищены.
+        </p>
+      </div>
+    </footer>
+    <script>
+      // Получаем кнопку меню и список навигации
+      const menuButton = document.getElementById("menu-button");
+      const navList = document.querySelector("nav ul");
+
+      // Обработчик клика по кнопке
+      menuButton.addEventListener("click", () => {
+        // Переключаем видимость меню
+        navList.classList.toggle("hidden");
+      });
+
+      const recipes = {
+        russian: [
+          { name: "Борщ", image: "/api/placeholder/200/200" },
+          { name: "Пельмени", image: "/api/placeholder/200/200" },
+          { name: "Блины", image: "/api/placeholder/200/200" },
+          { name: "Щи", image: "/api/placeholder/200/200" },
+        ],
+        italian: [
+          { name: "Пицца", image: "/api/placeholder/200/200" },
+          { name: "Паста", image: "/api/placeholder/200/200" },
+          { name: "Лазанья", image: "/api/placeholder/200/200" },
+          { name: "Ризотто", image: "/api/placeholder/200/200" },
+        ],
+        asian: [
+          { name: "Суши", image: "/api/placeholder/200/200" },
+          { name: "Роллы", image: "/api/placeholder/200/200" },
+          { name: "Том-ям", image: "/api/placeholder/200/200" },
+          { name: "Вок", image: "/api/placeholder/200/200" },
+        ],
+      };
+
+      function showRecipes(category) {
+        const recipeList = document.getElementById("recipeList");
+        const tabs = document.querySelectorAll(".recipe-tab");
+
+        // Обновляем активную вкладку
+        tabs.forEach((tab) => tab.classList.remove("active-tab"));
+        event.target.classList.add("active-tab");
+
+        // Очищаем список рецептов
+        recipeList.innerHTML = "";
+
+        // Загружаем рецепты выбранной категории
+        recipes[category].forEach((recipe) => {
+          const recipeCard = `
+                    <div class="bg-white p-4 rounded-lg shadow-md">
+                        <img src="${recipe.image}" alt="${recipe.name}" class="w-full h-48 object-cover rounded-lg mb-4">
+                        <h3 class="font-bold text-center">${recipe.name}</h3>
+                    </div>
+                `;
+          recipeList.innerHTML += recipeCard;
+        });
+      }
+
+      // Показываем русские рецепты по умолчанию
+      showRecipes("russian");
+    </script>
+  </body>
+</html>
