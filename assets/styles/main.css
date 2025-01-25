@@ -1,1030 +1,1063 @@
 *{
-    margin: 0;
+  margin: 0;
 }
 a {
-  text-decoration: none;
+text-decoration: none;
 }
 
 /* Для состояний hover/focus/active */
 a:hover, 
 a:focus, 
 a:active {
-  text-decoration: none;
+text-decoration: none;
 }
-  /* Общие стили для header */
-  :root {
-    --primary-color: #ff4757;
-    --secondary-color: #2f3542;
-    --transition-speed: 0.3s;
-  }
+/* Общие стили для header */
+:root {
+  --primary-color: #ff4757;
+  --secondary-color: #2f3542;
+  --transition-speed: 0.3s;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* Адаптивная типографика */
+@media (max-width: 768px) {
   body {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility;
+    font-size: 16px;
   }
   
-  /* Адаптивная типографика */
-  @media (max-width: 768px) {
-    body {
-      font-size: 16px;
-    }
-    
-    .custom-title {
-      font-size: 1.8rem;
-    }
+  .custom-title {
+    font-size: 1.8rem;
   }
+}
 /* Общие стили для body */
 .custom-body {
-    background-color: #f3f4f6; /* bg-gray-100 */
-  }
-  
-  /* Стили для бегущей строки */
-  .custom-ticker {
-    background-color: #dc2626; /* bg-red-600 */
-    color: #fff; /* text-white */
-    padding: 1rem; /* p-4 */
-    height: 4rem; /* h-16 */
-    display: flex; /* flex */
-    align-items: center; /* items-center */
-  }
-  
-  /* Контейнер для бегущей строки */
-  .ticker-container {
-    width: 100%; /* w-full */
-  }
-  
-  /* Содержимое бегущей строки */
-  .ticker-content {
-    font-size: 1.25rem; /* text-xl */
-    line-height: 1.75rem; /* Добавляем для лучшего визуального восприятия */
-  }
+  background-color: #f3f4f6; /* bg-gray-100 */
+}
+
+/* Стили для бегущей строки */
+.custom-ticker {
+  background-color: #dc2626; /* bg-red-600 */
+  color: #fff; /* text-white */
+  padding: 1rem; /* p-4 */
+  height: 4rem; /* h-16 */
+  display: flex; /* flex */
+  align-items: center; /* items-center */
+}
+
+/* Контейнер для бегущей строки */
+.ticker-container {
+  width: 100%; /* w-full */
+}
+
+/* Содержимое бегущей строки */
+.ticker-content {
+  font-size: 1.25rem; /* text-xl */
+  line-height: 1.75rem; /* Добавляем для лучшего визуального восприятия */
+}
 /* Убираем маркеры списка */
 .custom-nav-links,
 .custom-mobile-links {
-  list-style: none; /* Убираем стандартные маркеры */
-  padding-left: 0; /* Убираем отступ слева */
-  margin: 0; /* Обнуляем внешние отступы */
+list-style: none; /* Убираем стандартные маркеры */
+padding-left: 0; /* Убираем отступ слева */
+margin: 0; /* Обнуляем внешние отступы */
 }
 
 /* Для всех пунктов списка */
 .custom-nav-links li,
 .custom-mobile-links li {
-  list-style: none; /* Дополнительная страховка */
+list-style: none; /* Дополнительная страховка */
 }
 
 
 /* Для заголовков */
 .custom-title {
-  font-family: 'Playfair Display', serif; /* Пример красивого шрифта */
-  font-weight: 700;
+font-family: 'Playfair Display', serif; /* Пример красивого шрифта */
+font-weight: 700;
 }
 
 /* Для навигационных ссылок */
 .custom-nav-link,
 .custom-mobile-link {
-  font-family: 'Roboto', sans-serif; /* Пример современного шрифта */
-  font-weight: 500;
+font-family: 'Roboto', sans-serif; /* Пример современного шрифта */
+font-weight: 500;
 }
-  
-  .custom-header {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    backdrop-filter: blur(10px);
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
-  }
-  
+
+.custom-header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+.custom-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  position: relative;
+}
+
+.custom-logo {
+  width: 80px;
+  height: 80px;
+  transition: transform var(--transition-speed) ease;
+}
+
+.custom-logo:hover {
+  transform: rotate(-15deg) scale(1.1);
+}
+
+.custom-title {
+  font-size: 2rem;
+  font-weight: 800;
+  background: linear-gradient(45deg, var(--primary-color), #ff6b81);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: -1px;
+}
+
+.custom-nav-links {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.custom-nav-link {
+  position: relative;
+  padding: 0.5rem 0;
+  color: var(--secondary-color);
+  transition: color var(--transition-speed) ease;
+}
+
+.custom-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary-color);
+  transition: width var(--transition-speed) ease;
+}
+
+.custom-nav-link:hover::after {
+  width: 100%;
+}
+
+.custom-mobile-menu-button {
+  display: none;
+}
+
+.custom-menu-icon {
+  width: 32px;
+  height: 32px;
+  stroke-width: 2px;
+  transition: transform var(--transition-speed) ease;
+}
+
+#menu-button[aria-expanded="true"] .custom-menu-icon {
+  transform: rotate(90deg);
+}
+
+/* Мобильное меню */
+.custom-mobile-menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-speed) ease-out;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.custom-mobile-menu.active {
+  max-height: 300px;
+}
+
+.custom-mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1.5rem;
+}
+
+.custom-mobile-link {
+  color: var(--secondary-color);
+  padding: 0.75rem;
+  border-radius: 8px;
+  transition: background var(--transition-speed) ease;
+}
+
+.custom-mobile-link:hover {
+  background: #f1f2f6;
+}
+
+@media (max-width: 768px) {
   .custom-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 1rem 2rem;
-    position: relative;
-  }
-  
-  .custom-logo {
-    width: 80px;
-    height: 80px;
-    transition: transform var(--transition-speed) ease;
-  }
-  
-  .custom-logo:hover {
-    transform: rotate(-15deg) scale(1.1);
-  }
-  
-  .custom-title {
-    font-size: 2rem;
-    font-weight: 800;
-    background: linear-gradient(45deg, var(--primary-color), #ff6b81);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    letter-spacing: -1px;
+    padding: 1rem;
   }
   
   .custom-nav-links {
-    display: flex;
-    gap: 2rem;
-    align-items: center;
-  }
-  
-  .custom-nav-link {
-    position: relative;
-    padding: 0.5rem 0;
-    color: var(--secondary-color);
-    transition: color var(--transition-speed) ease;
-  }
-  
-  .custom-nav-link::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--primary-color);
-    transition: width var(--transition-speed) ease;
-  }
-  
-  .custom-nav-link:hover::after {
-    width: 100%;
-  }
-  
-  .custom-mobile-menu-button {
     display: none;
   }
   
-  .custom-menu-icon {
-    width: 32px;
-    height: 32px;
-    stroke-width: 2px;
-    transition: transform var(--transition-speed) ease;
+  .custom-mobile-menu-button {
+    display: block;
   }
   
-  #menu-button[aria-expanded="true"] .custom-menu-icon {
-    transform: rotate(90deg);
+  .custom-logo {
+    width: 60px;
+    height: 60px;
   }
   
-  /* Мобильное меню */
-  .custom-mobile-menu {
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height var(--transition-speed) ease-out;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background: white;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  .custom-title {
+    font-size: 1.5rem;
   }
-  
-  .custom-mobile-menu.active {
-    max-height: 300px;
-  }
-  
-  .custom-mobile-links {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1.5rem;
-  }
-  
-  .custom-mobile-link {
-    color: var(--secondary-color);
-    padding: 0.75rem;
-    border-radius: 8px;
-    transition: background var(--transition-speed) ease;
-  }
-  
-  .custom-mobile-link:hover {
-    background: #f1f2f6;
-  }
-  
-  @media (max-width: 768px) {
-    .custom-nav {
-      padding: 1rem;
-    }
-    
-    .custom-nav-links {
-      display: none;
-    }
-    
-    .custom-mobile-menu-button {
-      display: block;
-    }
-    
-    .custom-logo {
-      width: 60px;
-      height: 60px;
-    }
-    
-    .custom-title {
-      font-size: 1.5rem;
-    }
-  }
-  
-  /* Анимация */
-  @keyframes slide-in {
-    from {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .animate-slide {
-    animation: slide-in 0.5s ease-out forwards;
-  }
+}
 
-  /* Стили для main */
+/* Анимация */
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide {
+  animation: slide-in 0.5s ease-out forwards;
+}
+
+/* Стили для main */
 .custom-main {
-    max-width: 1280px; /* container */
-    margin: 0 auto; /* mx-auto */
-    padding: 2rem 1.5rem; /* px-6 py-8 */
-  }
+  max-width: 1280px; /* container */
+  margin: 0 auto; /* mx-auto */
+  padding: 2rem 1.5rem; /* px-6 py-8 */
+}
 
-  /* Стили для секции */
+/* Стили для секции */
 .custom-section {
-    display: grid; /* grid */
-    gap: 2rem; /* gap-8 */
-  }
-  
-  @media (min-width: 768px) {
-    .custom-section {
-      grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
-    }
-  }
-  
-  /* Стили для карточки */
-  .custom-card {
-    background-color: #fff; /* bg-white */
-    padding: 1.5rem; /* p-6 */
-    border-radius: 0.5rem; /* rounded-lg */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
-  }
-  
-  /* Заголовок карточки */
-  .custom-card-title {
-    font-size: 1.5rem; /* text-2xl */
-    font-weight: 600; /* font-semibold */
-    margin-bottom: 1rem; /* mb-4 */
-    color: #dc2626; /* text-red-600 */
-  }
-  
-  /* Контент карточки */
-  .custom-card-content {
-    display: flex; /* flex */
-    flex-direction: column; /* flex-col */
-    gap: 1rem; /* space-y-4 */
-  }
-  
-  /* Элемент рецепта */
-  .custom-recipe-item {
-    display: flex;
-    align-items: flex-start; /* Изменено с center на flex-start */
-    gap: 1.5rem; /* Добавлено вместо margin-right */
-    padding: 1rem;
-    border-radius: 0.5rem;
-    transition: all 0.3s ease;
-  }
-  
+  display: grid; /* grid */
+  gap: 2rem; /* gap-8 */
+}
 
-  .custom-recipe-item:hover {
-    background-color: #f9fafb; /* hover:bg-gray-50 */
+@media (min-width: 768px) {
+  .custom-section {
+    grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
   }
-  
-  /* Изображение рецепта */  
-  .custom-recipe-image {
-    flex: 0 0 80px; /* Фиксированная ширина изображения */
-    width: 80px;
-    height: 80px;
-    object-fit: cover;
-    border-radius: 0.5rem;
-    transition: transform 0.3s ease;
-  }
-  
-  
-  .custom-recipe-image:hover {
-    transform: scale(1.1); /* hover:scale-110 */
-  }
-  
-  
-  /* Описание рецепта */.custom-recipe-item > div {
-  flex: 1; /* Текстовый блок занимает все доступное пространство */
-  min-width: 0; /* Фикс для переноса текста */
+}
+
+/* Стили для карточки */
+.custom-card {
+  background-color: #fff; /* bg-white */
+  padding: 1.5rem; /* p-6 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+}
+
+/* Заголовок карточки */
+.custom-card-title {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 600; /* font-semibold */
+  margin-bottom: 1rem; /* mb-4 */
+  color: #dc2626; /* text-red-600 */
+}
+
+/* Контент карточки */
+.custom-card-content {
+  display: flex; /* flex */
+  flex-direction: column; /* flex-col */
+  gap: 1rem; /* space-y-4 */
+}
+
+/* Элемент рецепта */
+.custom-recipe-item {
+  display: flex;
+  align-items: flex-start; /* Изменено с center на flex-start */
+  gap: 1.5rem; /* Добавлено вместо margin-right */
+  padding: 1rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+
+.custom-recipe-item:hover {
+  background-color: #f9fafb; /* hover:bg-gray-50 */
+}
+
+/* Изображение рецепта */  
+.custom-recipe-image {
+  flex: 0 0 80px; /* Фиксированная ширина изображения */
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+
+.custom-recipe-image:hover {
+  transform: scale(1.1); /* hover:scale-110 */
+}
+
+
+/* Описание рецепта */.custom-recipe-item > div {
+flex: 1; /* Текстовый блок занимает все доступное пространство */
+min-width: 0; /* Фикс для переноса текста */
 }
 
 .custom-recipe-name {
-  font-size: 1.125rem;
-  margin-bottom: 0.5rem;
-  color: #2d3436;
+font-size: 1.125rem;
+margin-bottom: 0.5rem;
+color: #2d3436;
 }
 
 .custom-recipe-description {
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: #636e72;
+font-size: 0.875rem;
+line-height: 1.5;
+color: #636e72;
 }
 
 /* Адаптивность для мобильных */
 @media (max-width: 640px) {
-  .custom-recipe-item {
-    flex-direction: column;
-    gap: 1rem;
-  }
+.custom-recipe-item {
+  flex-direction: column;
+  gap: 1rem;
+}
 
-  .custom-recipe-image {
-    width: 100%;
-    height: 200px;
-    flex: none;
+.custom-recipe-image {
+  width: 100%;
+  height: 200px;
+  flex: none;
+}
+}
+/* Заголовок статьи */
+.custom-article-title {
+  font-weight: 700; /* font-bold */
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+/* Текст статьи */
+.custom-article-text {
+  color: #374151; /* text-gray-700 */
+}
+
+/* Ссылка статьи */
+.custom-article-link {
+  color: #dc2626; /* text-red-600 */
+  text-decoration: none; /* hover:underline */
+  transition: color 0.3s, transform 0.3s; /* transition */
+}
+
+.custom-article-link:hover {
+  text-decoration: underline; /* hover:underline */
+  transform: translateX(0.5rem); /* hover:translate-x-2 */
+}
+
+/* Стили для секции */
+.custom-section {
+  margin-top: 3rem; /* mt-12 */
+}
+
+/* Заголовок секции */
+.custom-section-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
+  text-align: center; /* text-center */
+  margin-bottom: 2rem; /* mb-8 */
+  color: #dc2626; /* text-red-600 */
+}
+
+/* Сетка статей */
+.custom-grid {
+  display: grid; /* grid */
+  gap: 1.5rem; /* gap-6 */
+}
+.custom-grid-calc{
+  display: flex; /* grid */
+  gap: 1.5rem; /* gap-6 */
+  flex-wrap: nowrap;
+  flex-direction: column;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: stretch;
+}
+.custom-form-group-calc{
+  display: flex;
+  margin-bottom: 1rem; /* mb-4 */
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-content: stretch;
+  align-items: baseline;
+  justify-content: space-evenly;
+}
+
+@media (min-width: 768px) {
+  .custom-grid,
+  .custom-grid-calc {
+    grid-template-columns: repeat(3, 1fr); /* md:grid-cols-3 */
   }
 }
-  /* Заголовок статьи */
-  .custom-article-title {
-    font-weight: 700; /* font-bold */
-    margin-bottom: 0.5rem; /* mb-2 */
-  }
-  
-  /* Текст статьи */
-  .custom-article-text {
-    color: #374151; /* text-gray-700 */
-  }
-  
-  /* Ссылка статьи */
-  .custom-article-link {
-    color: #dc2626; /* text-red-600 */
-    text-decoration: none; /* hover:underline */
-    transition: color 0.3s, transform 0.3s; /* transition */
-  }
-  
-  .custom-article-link:hover {
-    text-decoration: underline; /* hover:underline */
-    transform: translateX(0.5rem); /* hover:translate-x-2 */
-  }
 
-  /* Стили для секции */
-.custom-section {
-    margin-top: 3rem; /* mt-12 */
-  }
-  
-  /* Заголовок секции */
-  .custom-section-title {
-    font-size: 1.875rem; /* text-3xl */
-    font-weight: 700; /* font-bold */
-    text-align: center; /* text-center */
-    margin-bottom: 2rem; /* mb-8 */
-    color: #dc2626; /* text-red-600 */
-  }
-  
-  /* Сетка статей */
-  .custom-grid {
-    display: grid; /* grid */
-    gap: 1.5rem; /* gap-6 */
-  }
-  
-  @media (min-width: 768px) {
-    .custom-grid {
-      grid-template-columns: repeat(3, 1fr); /* md:grid-cols-3 */
-    }
-  }
-  
-  /* Карточка статьи */
-  .custom-card {
-    background-color: #fff; /* bg-white */
-    padding: 1rem; /* p-4 */
-    border-radius: 0.5rem; /* rounded-lg */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
-    transition: transform 0.3s; /* transition */
-  }
-  
-  .custom-card:hover {
-    transform: scale(1.05); /* hover:scale-105 */
-  }
-  
-  /* Изображение в карточке */
-  .custom-card-image {
-    width: 100%; /* w-full */
-    height: 12rem; /* h-48 */
-    object-fit: cover; /* object-cover */
-    border-radius: 0.5rem; /* rounded-lg */
-    margin-bottom: 1rem; /* mb-4 */
-  }
-  
-  /* Заголовок статьи */
-  .custom-card-heading {
-    font-weight: 700; /* font-bold */
-    margin-bottom: 0.5rem; /* mb-2 */
-  }
-  
-  /* Текст статьи */
-  .custom-card-text {
-    color: #4b5563; /* text-gray-600 */
-    margin-bottom: 1rem; /* mb-4 */
-  }
-  
-  /* Ссылка статьи */
-  .custom-card-link {
-    color: #dc2626; /* text-red-600 */
-    text-decoration: none; /* hover:underline */
-  }
-  
-  .custom-card-link:hover {
-    text-decoration: underline; /* hover:underline */
-  }
-  /* Стили для секции */
-.custom-section {
-    margin-bottom: 3rem; /* mb-12 */
-    padding: 2rem 1.5rem; /* px-6 py-8 */
-  }
-  
-  /* Заголовок секции */
-  .custom-section-title {
-    font-size: 1.875rem; /* text-3xl */
-    font-weight: 700; /* font-bold */
-    text-align: center; /* text-center */
-    margin-bottom: 2rem; /* mb-8 */
-    color: #dc2626; /* text-red-600 */
-  }
-  
-  /* Сетка мастер-классов */
-  .custom-grid {
-    display: grid; /* grid */
-    gap: 1.5rem; /* gap-6 */
-  }
-  
-  @media (min-width: 768px) {
-    .custom-grid {
-      grid-template-columns: repeat(3, 1fr); /* md:grid-cols-3 */
-    }
-  }
-  
-  /* Карточка мастер-класса */
-  .custom-card {
-    background-color: #fff; /* bg-white */
-    padding: 1.5rem; /* p-6 */
-    border-radius: 0.5rem; /* rounded-lg */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
-    transition: transform 0.3s; /* transition-transform */
-  }
-  
-  .custom-card:hover {
-    transform: scale(1.1); /* hover:scale-110 */
-  }
-  
-  /* Заголовок карточки */
-  .custom-card-heading {
-    font-size: 1.25rem; /* text-xl */
-    font-weight: 700; /* font-bold */
-    margin-bottom: 1rem; /* mb-4 */
-  }
-  
-  /* Текст карточки */
-  .custom-card-text {
-    color: #4b5563; /* text-gray-600 */
-    margin-bottom: 1rem; /* mb-4 */
-  }
-  
-  /* Кнопка карточки */
-  .custom-card-button {
-    background-color: #dc2626; /* bg-red-600 */
-    color: #fff; /* text-white */
-    padding: 0.5rem 1rem; /* px-4 py-2 */
-    border-radius: 0.25rem; /* rounded */
-    text-decoration: none; /* Убираем подчеркивание */
-    display: inline-block; /* Чтобы кнопка была инлайновым блоком */
-    transition: background-color 0.3s; /* hover:bg-red-700 */
-  }
-  
-  .custom-card-button:hover {
-    background-color: #b91c1c; /* hover:bg-red-700 */
-  }
-  /* Стили для секции */
-.custom-section {
-    margin-bottom: 3rem; /* mb-12 */
-  }
-  
-  /* Заголовок секции */
-  .custom-section-title {
-    font-size: 1.875rem; /* text-3xl */
-    font-weight: 700; /* font-bold */
-    text-align: center; /* text-center */
-    margin-bottom: 2rem; /* mb-8 */
-    color: #dc2626; /* text-red-600 */
-  }
-  
-  /* Контейнер для кнопок */
-  .custom-tabs {
-    display: flex; /* flex */
-    justify-content: center; /* justify-center */
-    margin-bottom: 1.5rem; /* mb-6 */
-  }
-  
-  /* Стили для кнопок */
-  .custom-tab {
-    margin: 0 0.5rem; /* mx-2 */
-    padding: 0.5rem 1rem; /* px-4 py-2 */
-    border-radius: 0.5rem; /* rounded-lg */
-    background-color: transparent; /* Изначально прозрачный фон */
-    color: #000; /* Цвет текста */
-    border: 1px solid #dc2626; /* Граница для неактивных кнопок */
-    cursor: pointer; /* Курсор в виде указателя */
-    transition: background-color 0.3s, color 0.3s; /* Плавные переходы */
-  }
-  
-  .custom-tab:hover {
-    background-color: #fee2e2; /* hover:bg-red-50 */
-  }
-  
-  /* Стили для активной кнопки */
-  .custom-tab.active-tab {
-    background-color: #dc2626; /* Цвет фона для активной кнопки */
-    color: #fff; /* Цвет текста для активной кнопки */
-    border-color: #dc2626; /* Граница для активной кнопки */
-  }
-  
-  /* Сетка для рецептов */
-  .custom-grid {
-    display: grid; /* grid */
-    gap: 1rem; /* gap-4 */
-  }
-  
-  @media (min-width: 768px) {
-    .custom-grid {
-      grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .custom-grid {
-      grid-template-columns: repeat(4, 1fr); /* lg:grid-cols-4 */
-    }
-  }
+/* Карточка статьи */
+.custom-card {
+  background-color: #fff; /* bg-white */
+  padding: 1rem; /* p-4 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+  transition: transform 0.3s; /* transition */
+}
 
-  /* Стили для секции */
-.custom-section {
-    margin-bottom: 3rem; /* mb-12 */
-  }
-  
-  /* Контейнер формы */
-  .custom-form-container {
-    background-color: #fff; /* bg-white */
-    padding: 2rem; /* p-8 */
-    border-radius: 0.5rem; /* rounded-lg */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
-  }
-  
-  /* Заголовок формы */
-  .custom-form-title {
-    font-size: 1.5rem; /* text-2xl */
-    font-weight: 700; /* font-bold */
-    margin-bottom: 1.5rem; /* mb-6 */
-    color: #dc2626; /* text-red-600 */
-  }
-  
-  /* Группа формы */
-  .custom-form-group {
-    margin-bottom: 1rem; /* mb-4 */
-  }
-  
-  /* Лейбл формы */
-  .custom-form-label {
-    display: block; /* block */
-    margin-bottom: 0.5rem; /* mb-2 */
-  }
-  
-  /* Стили для select */
-  .custom-form-select {
-    width: 100%; /* w-full */
-    padding: 0.5rem; /* p-2 */
-    border: 1px solid #e5e7eb; /* border */
-    border-radius: 0.25rem; /* rounded */
-  }
-  
-  /* Группа радио-кнопок */
-  .custom-radio-group {
-    display: flex; /* inline-flex */
-    gap: 1rem; /* mr-4 */
-  }
-  
-  /* Лейбл радио-кнопки */
-  .custom-radio-label {
-    display: flex; /* inline-flex */
-    align-items: center; /* items-center */
-  }
-  
-  .custom-radio-label span {
-    margin-left: 0.5rem; /* ml-2 */
-  }
-  
-  /* Кнопка отправки */
-  .custom-form-button {
-    background-color: #dc2626; /* bg-red-600 */
-    color: #fff; /* text-white */
-    padding: 0.5rem 1.5rem; /* px-6 py-2 */
-    border-radius: 0.25rem; /* rounded */
-    border: none; /* Убираем границу */
-    cursor: pointer; /* Курсор в виде указателя */
-    transition: background-color 0.3s; /* hover:bg-red-700 */
-  }
-  
-  .custom-form-button:hover {
-    background-color: #b91c1c; /* hover:bg-red-700 */
-  }
+.custom-card:hover {
+  transform: scale(1.05); /* hover:scale-105 */
+}
 
-  /* Стили для секции */
+/* Изображение в карточке */
+.custom-card-image {
+  width: 100%; /* w-full */
+  height: 12rem; /* h-48 */
+  object-fit: cover; /* object-cover */
+  border-radius: 0.5rem; /* rounded-lg */
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+/* Заголовок статьи */
+.custom-card-heading {
+  font-weight: 700; /* font-bold */
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+/* Текст статьи */
+.custom-card-text {
+  color: #4b5563; /* text-gray-600 */
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+/* Ссылка статьи */
+.custom-card-link {
+  color: #dc2626; /* text-red-600 */
+  text-decoration: none; /* hover:underline */
+}
+
+.custom-card-link:hover {
+  text-decoration: underline; /* hover:underline */
+}
+/* Стили для секции */
 .custom-section {
-    margin-bottom: 3rem; /* mb-12 */
-    background-color: #fff; /* bg-white */
-    padding: 2rem; /* p-8 */
-    border-radius: 0.5rem; /* rounded-lg */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+  margin-bottom: 3rem; /* mb-12 */
+  padding: 2rem 1.5rem; /* px-6 py-8 */
+}
+
+/* Заголовок секции */
+.custom-section-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
+  text-align: center; /* text-center */
+  margin-bottom: 2rem; /* mb-8 */
+  color: #dc2626; /* text-red-600 */
+}
+
+/* Сетка мастер-классов */
+.custom-grid {
+  display: grid; /* grid */
+  gap: 1.5rem; /* gap-6 */
+}
+
+@media (min-width: 768px) {
+  .custom-grid {
+    grid-template-columns: repeat(3, 1fr); /* md:grid-cols-3 */
   }
-  .custom-section-recipe{
-    display: flex;
-    margin-bottom: 3rem; /* mb-12 */
-    background-color: #fff; /* bg-white */
-    padding: 2rem; /* p-8 */
-    border-radius: 0.5rem; /* rounded-lg */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
-    flex-direction: column;
-    align-content: space-between;
-    justify-content: space-around;
-    align-items: stretch;
+}
+
+/* Карточка мастер-класса */
+.custom-card {
+  background-color: #fff; /* bg-white */
+  padding: 1.5rem; /* p-6 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+  transition: transform 0.3s; /* transition-transform */
+}
+
+.custom-card:hover {
+  transform: scale(1.1); /* hover:scale-110 */
+}
+
+/* Заголовок карточки */
+.custom-card-heading {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 700; /* font-bold */
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+/* Текст карточки */
+.custom-card-text {
+  color: #4b5563; /* text-gray-600 */
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+/* Кнопка карточки */
+.custom-card-button {
+  background-color: #dc2626; /* bg-red-600 */
+  color: #fff; /* text-white */
+  padding: 0.5rem 1rem; /* px-4 py-2 */
+  border-radius: 0.25rem; /* rounded */
+  text-decoration: none; /* Убираем подчеркивание */
+  display: inline-block; /* Чтобы кнопка была инлайновым блоком */
+  transition: background-color 0.3s; /* hover:bg-red-700 */
+}
+
+.custom-card-button:hover {
+  background-color: #b91c1c; /* hover:bg-red-700 */
+}
+/* Стили для секции */
+.custom-section {
+  margin-bottom: 3rem; /* mb-12 */
+}
+
+/* Заголовок секции */
+.custom-section-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
+  text-align: center; /* text-center */
+  margin-bottom: 2rem; /* mb-8 */
+  color: #dc2626; /* text-red-600 */
+}
+
+/* Контейнер для кнопок */
+.custom-tabs {
+  display: flex; /* flex */
+  justify-content: center; /* justify-center */
+  margin-bottom: 1.5rem; /* mb-6 */
+}
+
+/* Стили для кнопок */
+.custom-tab {
+  margin: 0 0.5rem; /* mx-2 */
+  padding: 0.5rem 1rem; /* px-4 py-2 */
+  border-radius: 0.5rem; /* rounded-lg */
+  background-color: transparent; /* Изначально прозрачный фон */
+  color: #000; /* Цвет текста */
+  border: 1px solid #dc2626; /* Граница для неактивных кнопок */
+  cursor: pointer; /* Курсор в виде указателя */
+  transition: background-color 0.3s, color 0.3s; /* Плавные переходы */
+}
+
+.custom-tab:hover {
+  background-color: #fee2e2; /* hover:bg-red-50 */
+}
+
+/* Стили для активной кнопки */
+.custom-tab.active-tab {
+  background-color: #dc2626; /* Цвет фона для активной кнопки */
+  color: #fff; /* Цвет текста для активной кнопки */
+  border-color: #dc2626; /* Граница для активной кнопки */
+}
+
+/* Сетка для рецептов */
+.custom-grid {
+  display: grid; /* grid */
+  gap: 1rem; /* gap-4 */
+}
+
+@media (min-width: 768px) {
+  .custom-grid {
+    grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
   }
-  .custom-section-op{
-    display: flex;
-    margin-bottom: 3rem; /* mb-12 */
-    background-color: #fff; /* bg-white */
-    padding: 2rem; /* p-8 */
-    border-radius: 0.5rem; /* rounded-lg */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
-    flex-direction: column;
-    align-content: space-between;
-    justify-content: space-around;
-    align-items: stretch;
+}
+
+@media (min-width: 1024px) {
+  .custom-grid {
+    grid-template-columns: repeat(4, 1fr); /* lg:grid-cols-4 */
   }
-  /* Адаптация для мобильных устройств */
+}
+
+/* Стили для секции */
+.custom-section {
+  margin-bottom: 3rem; /* mb-12 */
+}
+
+/* Контейнер формы */
+.custom-form-container {
+  background-color: #fff; /* bg-white */
+  padding: 2rem; /* p-8 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+}
+
+/* Заголовок формы */
+.custom-form-title {
+  font-size: 1.5rem; /* text-2xl */
+  font-weight: 700; /* font-bold */
+  margin-bottom: 1.5rem; /* mb-6 */
+  color: #dc2626; /* text-red-600 */
+}
+
+/* Группа формы */
+.custom-form-group {
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+/* Лейбл формы */
+.custom-form-label {
+  display: block; /* block */
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+/* Стили для select */
+.custom-form-select {
+  width: 100%; /* w-full */
+  padding: 0.5rem; /* p-2 */
+  border: 1px solid #e5e7eb; /* border */
+  border-radius: 0.25rem; /* rounded */
+}
+
+/* Группа радио-кнопок */
+.custom-radio-group {
+  display: flex; /* inline-flex */
+  gap: 1rem; /* mr-4 */
+}
+
+/* Лейбл радио-кнопки */
+.custom-radio-label {
+  display: flex; /* inline-flex */
+  align-items: center; /* items-center */
+}
+
+.custom-radio-label span {
+  margin-left: 0.5rem; /* ml-2 */
+}
+
+/* Кнопка отправки */
+.custom-form-button {
+  background-color: #dc2626; /* bg-red-600 */
+  color: #fff; /* text-white */
+  padding: 0.5rem 1.5rem; /* px-6 py-2 */
+  border-radius: 0.25rem; /* rounded */
+  border: none; /* Убираем границу */
+  cursor: pointer; /* Курсор в виде указателя */
+  transition: background-color 0.3s; /* hover:bg-red-700 */
+}
+
+.custom-form-button:hover {
+  background-color: #b91c1c; /* hover:bg-red-700 */
+}
+
+/* Стили для секции */
+.custom-section {
+  margin-bottom: 3rem; /* mb-12 */
+  background-color: #fff; /* bg-white */
+  padding: 2rem; /* p-8 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+}
+.custom-section-recipe{
+  display: flex;
+  margin-bottom: 3rem; /* mb-12 */
+  background-color: #fff; /* bg-white */
+  padding: 2rem; /* p-8 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: space-around;
+  align-items: stretch;
+}
+.custom-section-op{
+  display: flex;
+  margin-bottom: 3rem; /* mb-12 */
+  background-color: #fff; /* bg-white */
+  padding: 2rem; /* p-8 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: space-around;
+  align-items: stretch;
+}
+.custom-section-calc{
+  display: flex;
+  margin-bottom: 3rem; /* mb-12 */
+  background-color: #fff; /* bg-white */
+  padding: 2rem; /* p-8 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+  flex-direction: column;
+  align-content: space-between;
+  justify-content: space-around;
+  align-items: stretch;
+}
+/* Адаптация для мобильных устройств */
 @media (max-width: 768px) {
-    .custom-section-op,
-    .custom-section-recipe {
-      margin-bottom: 1.5rem;
-      padding: 1rem;
-      border-radius: 0.375rem;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-      gap: 1rem;
-    }
+  .custom-section-op,
+  .custom-section-recipe,
+  .custom-section-calc {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    border-radius: 0.375rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    gap: 1rem;
   }
-  
-  /* Для очень маленьких экранов */
-  @media (max-width: 480px) {
-    .custom-section-op,
-    .custom-section-recipe  {
-      margin-left: -0.5rem;
-      margin-right: -0.5rem;
-      border-radius: 0;
-    }
+}
+
+/* Для очень маленьких экранов */
+@media (max-width: 480px) {
+  .custom-section-op,
+  .custom-section-recipe,
+  .custom-section-calc  {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    border-radius: 0;
   }
-  /* Заголовок секции */
-  .custom-section-title {
-    font-size: 1.875rem; /* text-3xl */
-    font-weight: 700; /* font-bold */
-    text-align: center; /* text-center */
-    margin-bottom: 2rem; /* mb-8 */
-    color: #dc2626; /* text-red-600 */
-  }
-  
-  /* Сетка для формы */
+}
+/* Заголовок секции */
+.custom-section-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
+  text-align: center; /* text-center */
+  margin-bottom: 2rem; /* mb-8 */
+  color: #dc2626; /* text-red-600 */
+}
+
+/* Сетка для формы */
+.custom-grid {
+  display: grid; /* grid */
+  gap: 1.5rem; /* gap-6 */
+}
+
+@media (min-width: 768px) {
   .custom-grid {
-    display: grid; /* grid */
-    gap: 1.5rem; /* gap-6 */
+    grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
   }
-  
-  @media (min-width: 768px) {
-    .custom-grid {
-      grid-template-columns: repeat(2, 1fr); /* md:grid-cols-2 */
-    }
-  }
-  
-  /* Группа формы */
-  .custom-form-group {
-    margin-bottom: 1rem; /* mb-4 */
-  }
-  
-  /* Лейбл формы */
-  .custom-form-label {
-    display: block; /* block */
-    margin-bottom: 0.5rem; /* mb-2 */
-  }
-  
-  /* Стили для select и input */
-  .custom-form-select,
-  .custom-form-input {
-    width: 100%; /* w-full */
-    padding: 0.5rem; /* p-2 */
-    border: 1px solid #e5e7eb; /* border */
-    border-radius: 0.25rem; /* rounded */
-  }
-  
-  /* Контейнер для кнопки */
-  .custom-form-button-container {
-    grid-column: span 2; /* md:col-span-2 */
-  }
-  
-  /* Кнопка */
-  .custom-form-button {
-    width: 100%; /* w-full */
-    background-color: #dc2626; /* bg-red-600 */
-    color: #fff; /* text-white */
-    padding: 0.5rem 1rem; /* py-2 */
-    border-radius: 0.25rem; /* rounded */
-    border: none; /* Убираем границу */
-    cursor: pointer; /* Курсор в виде указателя */
-    transition: background-color 0.3s; /* hover:bg-red-700 */
-  }
-  
-  .custom-form-button:hover {
-    background-color: #b91c1c; /* hover:bg-red-700 */
-  }
-  
-  /* Результат */
-  .custom-result {
-    grid-column: span 2; /* md:col-span-2 */
-    text-align: center; /* text-center */
-    font-size: 1.25rem; /* text-xl */
-    font-weight: 700; /* font-bold */
-  }
-  /* Стили для секции */
+}
+
+/* Группа формы */
+.custom-form-group {
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+/* Лейбл формы */
+.custom-form-label {
+  display: block; /* block */
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+/* Стили для select и input */
+.custom-form-select,
+.custom-form-input {
+  width: 100%; /* w-full */
+  padding: 0.5rem; /* p-2 */
+  border: 1px solid #e5e7eb; /* border */
+  border-radius: 0.25rem; /* rounded */
+}
+
+/* Контейнер для кнопки */
+.custom-form-button-container {
+  grid-column: span 2; /* md:col-span-2 */
+}
+
+/* Кнопка */
+.custom-form-button {
+  width: 100%; /* w-full */
+  background-color: #dc2626; /* bg-red-600 */
+  color: #fff; /* text-white */
+  padding: 0.5rem 1rem; /* py-2 */
+  border-radius: 0.25rem; /* rounded */
+  border: none; /* Убираем границу */
+  cursor: pointer; /* Курсор в виде указателя */
+  transition: background-color 0.3s; /* hover:bg-red-700 */
+}
+
+.custom-form-button:hover {
+  background-color: #b91c1c; /* hover:bg-red-700 */
+}
+
+/* Результат */
+.custom-result {
+  grid-column: span 2; /* md:col-span-2 */
+  text-align: center; /* text-center */
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 700; /* font-bold */
+}
+/* Стили для секции */
 .custom-section {
-    margin-bottom: 3rem; /* mb-12 */
-  }
-  
-  /* Заголовок секции */
-  .custom-section-title {
-    font-size: 1.875rem; /* text-3xl */
-    font-weight: 700; /* font-bold */
-    text-align: center; /* text-center */
-    margin-bottom: 2rem; /* mb-8 */
-    color: #dc2626; /* text-red-600 */
-  }
-  
-  /* Сетка для карточек */
+  margin-bottom: 3rem; /* mb-12 */
+}
+
+/* Заголовок секции */
+.custom-section-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
+  text-align: center; /* text-center */
+  margin-bottom: 2rem; /* mb-8 */
+  color: #dc2626; /* text-red-600 */
+}
+
+/* Сетка для карточек */
+.custom-grid {
+  display: grid; /* grid */
+  gap: 1.5rem; /* gap-6 */
+}
+
+@media (min-width: 768px) {
   .custom-grid {
-    display: grid; /* grid */
-    gap: 1.5rem; /* gap-6 */
+    grid-template-columns: repeat(3, 1fr); /* md:grid-cols-3 */
   }
-  
-  @media (min-width: 768px) {
-    .custom-grid {
-      grid-template-columns: repeat(3, 1fr); /* md:grid-cols-3 */
-    }
-  }
-  
-  /* Карточка */
-  .custom-card {
-    background-color: #fff; /* bg-white */
-    padding: 1.5rem; /* p-6 */
-    border-radius: 0.5rem; /* rounded-lg */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
-    text-align: center; /* text-center */
-    transition: background-color 0.3s; /* hover:bg-red-50 */
-  }
-  
-  .custom-card:hover {
-    background-color: #fee2e2; /* hover:bg-red-50 */
-  }
-  
-  /* Изображение в карточке */
-  .custom-card-image {
-    width: 100%; /* w-full */
-    height: 12rem; /* h-48 */
-    object-fit: cover; /* object-cover */
-    border-radius: 0.5rem; /* rounded-lg */
-    margin-bottom: 1rem; /* mb-4 */
-  }
-  
-  /* Заголовок карточки */
-  .custom-card-heading {
-    font-size: 1.25rem; /* text-xl */
-    font-weight: 700; /* font-bold */
-    margin-bottom: 0.5rem; /* mb-2 */
-  }
-  
-  /* Текст карточки */
-  .custom-card-text {
-    color: #4b5563; /* text-gray-600 */
-  }
-  /* Стили для секции */
+}
+
+/* Карточка */
+.custom-card {
+  background-color: #fff; /* bg-white */
+  padding: 1.5rem; /* p-6 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+  text-align: center; /* text-center */
+  transition: background-color 0.3s; /* hover:bg-red-50 */
+}
+
+.custom-card:hover {
+  background-color: #fee2e2; /* hover:bg-red-50 */
+}
+
+/* Изображение в карточке */
+.custom-card-image {
+  width: 100%; /* w-full */
+  height: 12rem; /* h-48 */
+  object-fit: cover; /* object-cover */
+  border-radius: 0.5rem; /* rounded-lg */
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+/* Заголовок карточки */
+.custom-card-heading {
+  font-size: 1.25rem; /* text-xl */
+  font-weight: 700; /* font-bold */
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+/* Текст карточки */
+.custom-card-text {
+  color: #4b5563; /* text-gray-600 */
+}
+/* Стили для секции */
 .custom-shopping-section {
-    margin-bottom: 3rem; /* mb-12 */
-    background-color: #fff; /* bg-white */
-    padding: 2rem; /* p-8 */
-    border-radius: 0.5rem; /* rounded-lg */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
-  }
-  
-  /* Заголовок */
-  .custom-shopping-title {
-    font-size: 1.875rem; /* text-3xl */
-    font-weight: 700; /* font-bold */
-    text-align: center; /* text-center */
-    margin-bottom: 2rem; /* mb-8 */
-    color: #dc2626; /* text-red-600 */
-  }
-  
-  /* Поле ввода */
-  .custom-shopping-input {
-    width: 100%; /* w-full */
-    padding: 0.5rem; /* p-2 */
-    border: 1px solid #e5e7eb; /* border */
-    border-radius: 0.25rem; /* rounded */
-    margin-bottom: 1rem; /* mb-4 */
-  }
-  
-  /* Кнопка добавления */
-  .custom-add-button {
-    width: 100%; /* w-full */
-    background-color: #dc2626; /* bg-red-600 */
-    color: #fff; /* text-white */
-    padding: 0.5rem 1rem; /* py-2 */
-    border-radius: 0.25rem; /* rounded */
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s; /* hover:bg-red-700 */
-    margin-bottom: 1rem; /* mb-4 */
-  }
-  
-  .custom-add-button:hover {
-    background-color: #b91c1c; /* hover:bg-red-700 */
-  }
-  
-  /* Список покупок */
-  .custom-shopping-list {
-    list-style-type: disc; /* list-disc */
-    padding-left: 1.25rem; /* pl-5 */
-  }
-  
-  /* Кнопка очистки */
-  .custom-clear-button {
-    width: 100%; /* w-full */
-    background-color: #e5e7eb; /* bg-gray-200 */
-    color: #374151; /* text-gray-700 */
-    padding: 0.5rem 1rem; /* py-2 */
-    border-radius: 0.25rem; /* rounded */
-    border: none;
-    cursor: pointer;
-    margin-top: 1rem; /* mt-4 */
-    transition: background-color 0.3s;
-  }
-  
-  .custom-clear-button:hover {
-    background-color: #d1d5db; /* hover:bg-gray-300 */
-  }
+  margin-bottom: 3rem; /* mb-12 */
+  background-color: #fff; /* bg-white */
+  padding: 2rem; /* p-8 */
+  border-radius: 0.5rem; /* rounded-lg */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+}
 
-  /* Секция с рецептами */
+/* Заголовок */
+.custom-shopping-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
+  text-align: center; /* text-center */
+  margin-bottom: 2rem; /* mb-8 */
+  color: #dc2626; /* text-red-600 */
+}
+
+/* Поле ввода */
+.custom-shopping-input {
+  width: 100%; /* w-full */
+  padding: 0.5rem; /* p-2 */
+  border: 1px solid #e5e7eb; /* border */
+  border-radius: 0.25rem; /* rounded */
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+/* Кнопка добавления */
+.custom-add-button {
+  width: 100%; /* w-full */
+  background-color: #dc2626; /* bg-red-600 */
+  color: #fff; /* text-white */
+  padding: 0.5rem 1rem; /* py-2 */
+  border-radius: 0.25rem; /* rounded */
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s; /* hover:bg-red-700 */
+  margin-bottom: 1rem; /* mb-4 */
+}
+
+.custom-add-button:hover {
+  background-color: #b91c1c; /* hover:bg-red-700 */
+}
+
+/* Список покупок */
+.custom-shopping-list {
+  list-style-type: disc; /* list-disc */
+  padding-left: 1.25rem; /* pl-5 */
+}
+
+/* Кнопка очистки */
+.custom-clear-button {
+  width: 100%; /* w-full */
+  background-color: #e5e7eb; /* bg-gray-200 */
+  color: #374151; /* text-gray-700 */
+  padding: 0.5rem 1rem; /* py-2 */
+  border-radius: 0.25rem; /* rounded */
+  border: none;
+  cursor: pointer;
+  margin-top: 1rem; /* mt-4 */
+  transition: background-color 0.3s;
+}
+
+.custom-clear-button:hover {
+  background-color: #d1d5db; /* hover:bg-gray-300 */
+}
+
+/* Секция с рецептами */
 .recipe-section {
-    display: grid;
-    gap: 1.5rem;
-    margin: 3rem 0;
-  }
-  
-  @media (min-width: 768px) {
-    .recipe-section {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  
-  /* Карточка рецепта */
-  .recipe-card {
-    background: #fff;
-    border-radius: 0.5rem;
-    padding: 1.5rem;
-    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
-  }
-  
-  .recipe-card:hover {
-    transform: translateY(-5px);
-  }
-  
-  /* Изображение рецепта */
-  .recipe-image {
-    height: 12rem;
-    border-radius: 0.5rem;
-    overflow: hidden;
-    margin-bottom: 1rem;
-  }
-  
-  .recipe-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.3s ease;
-  }
-  
-  .recipe-image:hover img {
-    transform: scale(1.1);
-  }
-  
-  /* Заголовок рецепта */
-  .recipe-card h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-  }
-  
-  /* Футер карточки */
-  .recipe-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  /* Время приготовления */
-  .cooking-time {
-    color: #6b7280;
-    font-size: 0.875rem;
-  }
-  
-  /* Кнопка готовить */
-  .cook-button {
-    background: #ef4444;
-    color: white;
-    padding: 0.25rem 1rem;
-    border-radius: 9999px;
-    border: none;
-    cursor: pointer;
-    transition: background 0.3s ease;
-  }
-  
-  .cook-button:hover {
-    background: #dc2626;
-  }
-  
-  /* Анимация пульсации */
-  @keyframes pulse {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.05); }
-    100% { transform: scale(1); }
-  }
-  
-  .pulse-animation {
-    animation: pulse 1.5s infinite;
-  }
+  display: grid;
+  gap: 1.5rem;
+  margin: 3rem 0;
+}
 
-  /* Стили для футера */
-.custom-footer {
-    background-color: #fff;        /* bg-white */
-    margin-top: 3rem;             /* mt-12 */
-    padding: 2rem 0;             /* py-8 */
+@media (min-width: 768px) {
+  .recipe-section {
+    grid-template-columns: repeat(3, 1fr);
   }
-  
-  /* Контейнер содержимого */
-  .footer-container {
-    max-width: 1280px;          /* container */
-    margin: 0 auto;            /* mx-auto */
-    padding: 0 1.5rem;        /* px-6 */
-    text-align: center;       /* text-center */
-  }
-  
-  /* Текст футера */
-  .footer-text {
-    color: #4b5563;          /* text-gray-600 */
-    font-size: 1rem;        /* Базовый размер шрифта */
-    line-height: 1.5;      /* Стандартный межстрочный интервал */
-  }
+}
 
-  /* Карточка рецепта */
+/* Карточка рецепта */
 .recipe-card {
-    background-color: #fff;              /* bg-white */
-    padding: 1rem;                      /* p-4 */
-    border-radius: 0.5rem;             /* rounded-lg */
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
-                0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
-  }
-  
-  /* Изображение рецепта */
-  .recipe-image {
-    width: 100%;                      /* w-full */
-    height: 12rem;                   /* h-48 (1rem = 16px → 48*4=192px = 12rem) */
-    object-fit: cover;              /* object-cover */
-    border-radius: 0.5rem;         /* rounded-lg */
-    margin-bottom: 1rem;          /* mb-4 */
-    cursor: pointer;             /* interactive-element (предполагаемый стиль) */
-    transition: background-color 0.3s ease; /* Для плавного изменения фона */
-  }
-  
-  .recipe-image:hover {
-    background-color: #fef2f2;    /* hover:bg-red-50 */
-  }
-  
-  /* Заголовок рецепта */
-  .recipe-title {
-    font-weight: 700;           /* font-bold */
-    text-align: center;        /* text-center */
-  }
+  background: #fff;
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Изображение рецепта */
+.recipe-image {
+  height: 12rem;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.recipe-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.recipe-image:hover img {
+  transform: scale(1.1);
+}
+
+/* Заголовок рецепта */
+.recipe-card h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Футер карточки */
+.recipe-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Время приготовления */
+.cooking-time {
+  color: #6b7280;
+  font-size: 0.875rem;
+}
+
+/* Кнопка готовить */
+.cook-button {
+  background: #ef4444;
+  color: white;
+  padding: 0.25rem 1rem;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.cook-button:hover {
+  background: #dc2626;
+}
+
+/* Анимация пульсации */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.pulse-animation {
+  animation: pulse 1.5s infinite;
+}
+
+/* Стили для футера */
+.custom-footer {
+  background-color: #fff;        /* bg-white */
+  margin-top: 3rem;             /* mt-12 */
+  padding: 2rem 0;             /* py-8 */
+}
+
+/* Контейнер содержимого */
+.footer-container {
+  max-width: 1280px;          /* container */
+  margin: 0 auto;            /* mx-auto */
+  padding: 0 1.5rem;        /* px-6 */
+  text-align: center;       /* text-center */
+}
+
+/* Текст футера */
+.footer-text {
+  color: #4b5563;          /* text-gray-600 */
+  font-size: 1rem;        /* Базовый размер шрифта */
+  line-height: 1.5;      /* Стандартный межстрочный интервал */
+}
+
+/* Карточка рецепта */
+.recipe-card {
+  background-color: #fff;              /* bg-white */
+  padding: 1rem;                      /* p-4 */
+  border-radius: 0.5rem;             /* rounded-lg */
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+              0 2px 4px -1px rgba(0, 0, 0, 0.06); /* shadow-md */
+}
+
+/* Изображение рецепта */
+.recipe-image {
+  width: 100%;                      /* w-full */
+  height: 12rem;                   /* h-48 (1rem = 16px → 48*4=192px = 12rem) */
+  object-fit: cover;              /* object-cover */
+  border-radius: 0.5rem;         /* rounded-lg */
+  margin-bottom: 1rem;          /* mb-4 */
+  cursor: pointer;             /* interactive-element (предполагаемый стиль) */
+  transition: background-color 0.3s ease; /* Для плавного изменения фона */
+}
+
+.recipe-image:hover {
+  background-color: #fef2f2;    /* hover:bg-red-50 */
+}
+
+/* Заголовок рецепта */
+.recipe-title {
+  font-weight: 700;           /* font-bold */
+  text-align: center;        /* text-center */
+}
