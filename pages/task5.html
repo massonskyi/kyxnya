@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Секреты Итальянской Кухни</title>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../assets/styles/elements.css">
+    <link rel="stylesheet" href="../assets/styles/main.css">
     <style>
         @keyframes slideIn {
             from { transform: translateX(-100%); opacity: 0; }
@@ -42,62 +43,109 @@
         }
     </style>
 </head>
-<body class="bg-gray-100">
-    <!-- Бегущая строка с рекламной акцией -->
-    <div class="bg-red-600 text-white p-4 h-16 flex items-center">
-        <div class="ticker-container w-full">
-            <div class="ticker-content text-xl">
-                🍝 Узнайте секреты итальянской кухни! | 🍕 Каждую неделю новые рецепты и советы по приготовлению
-            </div>
-        </div>
-    </div>
-
-    <header class="bg-white shadow-md">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <img src="../assets/images/logo.png" alt="Кулинарный мир" class="w-16 h-16 object-cover md:w-20 md:h-20">
-            <div class="text-2xl font-bold text-red-600 animate-slide">Кулинарный мир</div>
-            <ul class="hidden md:flex space-x-6">
-                <li><a href="../index.html" class="text-gray-700 hover:text-red-600 transition transform hover:scale-110">Главная</a></li>
-                <li><a href="../index.html" class="text-gray-700 hover:text-red-600 transition transform hover:scale-110">История еды</a></li>
-                <li><a href="../index.html" class="text-gray-700 hover:text-red-600 transition transform hover:scale-110">Блог</a></li>
-                <li><a href="../index.html" class="text-gray-700 hover:text-red-600 transition transform hover:scale-110">Мастер классы</a></li>
-            </ul>
-            <div class="md:hidden">
-                <button id="menu-button" class="text-gray-700 hover:text-red-600 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
-            </div>
-        </nav>
-    </header>
-
-    <main class="container mx-auto px-6 py-8">
-        <!-- Вставляй свой контент сюда -->
-        <section class="bg-white p-6 rounded-lg shadow-md animate-slide">
-          <div id="game-container">
-            <div id="game-zone">
-              <div id="congrats-message">Поздравляем! Вы собрали картинку!</div>
-              <!-- Елка -->
-              <div class="draggable small-triangle" data-type="tree"></div>
-              <div class="draggable medium-triangle" data-type="tree"></div>
-              <div class="draggable large-triangle" data-type="tree"></div>
-              <div class="draggable tree-trunk" data-type="tree"></div>
-              <!-- Домик -->
-              <div class="draggable house-square" data-type="house"></div>
-              <div class="roof draggable" data-type="house"></div>
-              <div class="draggable window" data-type="house"></div>
-            </div>
+<body class="custom-body">
+    <!-- Бегущая строка новостей -->
+    <div class="custom-ticker">
+        <div class="ticker-container">
+          <div class="ticker-content">
+            🍽️ Новый мастер-класс по итальянской кухне | 🥘 Открытие кулинарной
+            школы | 🍰 Конкурс кондитерского искусства | 🍲 Специальные курсы от
+            шеф-поваров | 🥗 Кулинарные туры по миру
           </div>
-        </section>
+        </div>
+      </div>
+    </body>
 
+    <header class="custom-header">
+        <nav class="custom-nav">
+          <img
+            src="../assets/images/logo.png"
+            alt="Кулинарный мир"
+            class="custom-logo"
+          />
+          <div class="custom-title animate-slide">
+            Кулинарный мир
+          </div>
+          <ul class="custom-nav-links">
+            <li>
+              <a href="../index.html" class="custom-nav-link">Главная</a>
+            </li>
+            <li>
+              <a href="../index.html"  class="custom-nav-link">История еды</a>
+            </li>
+            <li>
+              <a href="../index.html"  class="custom-nav-link">Блог</a>
+            </li>
+            <li>
+              <a href="../index.html"  class="custom-nav-link">Контакты</a>
+            </li>
+          </ul>
+          <div class="custom-mobile-menu-button">
+            <button id="menu-button" class="custom-menu-button">
+              <svg
+                class="custom-menu-icon"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </nav>
+        <div id="mobile-menu" class="custom-mobile-menu">
+          <ul class="custom-mobile-links">
+            <li>
+              <a href="../index.html"  class="custom-mobile-link">Главная</a>
+            </li>
+            <li>
+              <a href="../index.html"  class="custom-mobile-link">История еды</a>
+            </li>
+            <li>
+              <a href="../index.html"  class="custom-mobile-link">Блог</a>
+            </li>
+            <li>
+              <a href="../index.html"  class="custom-mobile-link">Контакты</a>
+            </li>
+          </ul>
+        </div>
+      </header>
+
+    <main class="custom-main">
+        <!-- Вставляй свой контент сюда -->
+        <section class="custom-section-op">
+            <div id="game-container">
+                <div id="game-zone">
+                  <div id="congrats-message">Поздравляем! Вы собрали картинку!</div>
+                  <!-- Елка -->
+                  <div class="draggable small-triangle" data-type="tree"></div>
+                  <div class="draggable medium-triangle" data-type="tree"></div>
+                  <div class="draggable large-triangle" data-type="tree"></div>
+                  <div class="draggable tree-trunk" data-type="tree"></div>
+                  <!-- Домик -->
+                  <div class="draggable house-square" data-type="house"></div>
+                  <div class="roof draggable" data-type="house"></div>
+                  <div class="draggable window" data-type="house"></div>
+                </div>
+              </div>
+        </section>
+        
     </main>
 
-    <footer class="bg-white mt-12 py-8">
-        <div class="container mx-auto px-6 text-center">
-            <p class="text-gray-600">&copy; 2024 Кулинарный мир. Все права защищены.</p>
+    <footer class="custom-footer">
+        <div class="footer-container">
+          <p class="footer-text">
+            &copy; 2024 Кулинарный мир. Все права защищены.
+          </p>
         </div>
-    </footer>
+      </footer>
+
     <script src="../assets/scripts/script.js" defer></script>
     <script>
         // Получаем кнопку меню и список навигации
@@ -112,3 +160,4 @@
     </script>
 </body>
 </html>
+

@@ -4,14 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Кулинарный мир</title>
-    <link
+    <!-- <link
       href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
       rel="stylesheet"
-    />
+    /> -->
     <link
       href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;700&family=Montserrat:wght@400;600&display=swap"
       rel="stylesheet"
     />
+
+
+    <link ref="stylesheet" rel="stylesheet" href="assets/styles/main.css" />
     <style>
       @keyframes slideIn {
         from {
@@ -99,564 +102,411 @@
       }
     </style>
   </head>
-  <body class="bg-gray-100">
+  <body class="custom-body">
     <!-- Бегущая строка новостей -->
-    <div class="bg-red-600 text-white p-4 h-16 flex items-center">
-      <div class="ticker-container w-full">
-        <div class="ticker-content text-xl">
+    <div class="custom-ticker">
+      <div class="ticker-container">
+        <div class="ticker-content">
           🍽️ Новый мастер-класс по итальянской кухне | 🥘 Открытие кулинарной
           школы | 🍰 Конкурс кондитерского искусства | 🍲 Специальные курсы от
           шеф-поваров | 🥗 Кулинарные туры по миру
         </div>
       </div>
     </div>
+  </body>
 
-    <header class="bg-white shadow-md">
-      <nav
-        class="container mx-auto px-6 py-4 flex justify-between items-center"
-      >
-        <img
-          src="assets/images/logo.png"
-          alt="Кулинарный мир"
-          class="w-16 h-16 object-cover md:w-20 md:h-20"
-        />
-        <div class="text-2xl font-bold text-red-600 animate-slide">
-          Кулинарный мир
-        </div>
-        <ul class="hidden md:flex space-x-6">
-          <li>
-            <a
-              href="#"
-              class="text-gray-700 hover:text-red-600 transition transform hover:scale-110"
-              >Рецепты</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="text-gray-700 hover:text-red-600 transition transform hover:scale-110"
-              >История еды</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="text-gray-700 hover:text-red-600 transition transform hover:scale-110"
-              >Блог</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="text-gray-700 hover:text-red-600 transition transform hover:scale-110"
-              >Контакты</a
-            >
-          </li>
-        </ul>
-        <div class="md:hidden">
-          <button
-            id="menu-button"
-            class="text-gray-700 hover:text-red-600 focus:outline-none"
-          >
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16m-7 6h7"
-              ></path>
-            </svg>
-          </button>
-        </div>
-      </nav>
-      <div id="mobile-menu" class="hidden md:hidden">
-        <ul class="flex flex-col space-y-2 px-6 py-4 bg-white shadow-md">
-          <li>
-            <a
-              href="#"
-              class="text-gray-700 hover:text-red-600 transition transform hover:scale-110"
-              >Рецепты</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="text-gray-700 hover:text-red-600 transition transform hover:scale-110"
-              >История еды</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="text-gray-700 hover:text-red-600 transition transform hover:scale-110"
-              >Блог</a
-            >
-          </li>
-          <li>
-            <a
-              href="#"
-              class="text-gray-700 hover:text-red-600 transition transform hover:scale-110"
-              >Контакты</a
-            >
-          </li>
-        </ul>
+  <header class="custom-header">
+    <nav class="custom-nav">
+      <img
+        src="assets/images/logo.png"
+        alt="Кулинарный мир"
+        class="custom-logo"
+      />
+      <div class="custom-title animate-slide">
+        Кулинарный мир
       </div>
-    </header>
+      <ul class="custom-nav-links">
+        <li>
+          <a href="#" class="custom-nav-link">Рецепты</a>
+        </li>
+        <li>
+          <a href="#" class="custom-nav-link">История еды</a>
+        </li>
+        <li>
+          <a href="#" class="custom-nav-link">Блог</a>
+        </li>
+        <li>
+          <a href="#" class="custom-nav-link">Контакты</a>
+        </li>
+      </ul>
+      <div class="custom-mobile-menu-button">
+        <button id="menu-button" class="custom-menu-button">
+          <svg
+            class="custom-menu-icon"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M4 6h16M4 12h16m-7 6h7"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="custom-mobile-menu">
+      <ul class="custom-mobile-links">
+        <li>
+          <a href="#" class="custom-mobile-link">Рецепты</a>
+        </li>
+        <li>
+          <a href="#" class="custom-mobile-link">История еды</a>
+        </li>
+        <li>
+          <a href="#" class="custom-mobile-link">Блог</a>
+        </li>
+        <li>
+          <a href="#" class="custom-mobile-link">Контакты</a>
+        </li>
+      </ul>
+    </div>
+  </header>
 
-    <main class="container mx-auto px-6 py-8">
+    <main class="custom-main">
       <!-- Популярные рецепты с анимацией -->
-      <section class="grid md:grid-cols-2 gap-8">
-        <div class="bg-white p-6 rounded-lg shadow-md animate-slide">
-          <h2 class="text-2xl font-semibold mb-4 text-red-600">
-            Популярные рецепты
-          </h2>
-          <div class="space-y-4">
+      <section class="custom-section">
+        <div class="custom-card animate-slide">
+          <h2 class="custom-card-title">Популярные рецепты</h2>
+          <div class="custom-card-content">
             <a href="pages/recipe1.html">
-              <div
-                class="flex items-center hover:bg-gray-50 transition p-2 rounded-lg"
-              >
+              <div class="custom-recipe-item">
                 <img
                   src="assets/images/recipe1.jpg"
                   alt="Рецепт"
-                  class="w-20 h-20 object-cover rounded-lg mr-4 transform hover:scale-110 transition"
+                  class="custom-recipe-image"
                 />
                 <div>
-                  <h3 class="font-bold">Шаверма в листе салата</h3>
-                  <p class="text-gray-600">
+                  <h3 class="custom-recipe-name">Шаверма в листе салата</h3>
+                  <p class="custom-recipe-description">
                     Классический русский рецепт с секретами бабушки
                   </p>
                 </div>
               </div>
             </a>
             <a href="pages/recipe3.html">
-              <div
-                class="flex items-center hover:bg-gray-50 transition p-2 rounded-lg"
-              >
+              <div class="custom-recipe-item">
                 <img
                   src="assets/images/recipe3.jpg"
                   alt="Рецепт"
-                  class="w-20 h-20 object-cover rounded-lg mr-4 transform hover:scale-110 transition"
+                  class="custom-recipe-image"
                 />
                 <div>
-                  <h3 class="font-bold">Пицца на рисовом хлебце</h3>
-                  <p class="text-gray-600">Домашний рецепт с тонкостями</p>
+                  <h3 class="custom-recipe-name">Пицца на рисовом хлебце</h3>
+                  <p class="custom-recipe-description">Домашний рецепт с тонкостями</p>
                 </div>
               </div>
             </a>
           </div>
         </div>
-
+      
         <!-- История еды с анимацией -->
-        <div
-          class="bg-white p-6 rounded-lg shadow-md animate-slide last-history"
-        >
-          <h2 class="text-2xl font-semibold mb-4 text-red-600">История еды</h2>
+        <div class="custom-card animate-slide last-history">
+          <h2 class="custom-card-title">История еды</h2>
           <article>
-            <h3 class="font-bold mb-2">Происхождение салата с арбузом</h3>
-            <p class="text-gray-700">
+            <h3 class="custom-article-title">Происхождение салата с арбузом</h3>
+            <p class="custom-article-text">
               🌞 Когда лето в разгаре, а на столе хочется чего-то лёгкого и
               необычного, арбузный салат становится идеальным выбором. Но вы
               задумывались, откуда появилась эта сочная идея? Мы расскажем вам
               историю блюда, которое стало символом жарких дней и ярких
               вкусов!...
             </p>
-            <a
-              href="pages/recipe5.html"
-              class="text-red-600 hover:underline transition transform hover:translate-x-2"
-              >Читать далее →</a
-            >
+            <a href="pages/recipe5.html" class="custom-article-link">Читать далее →</a>
           </article>
         </div>
       </section>
 
       <!-- Последние статьи с анимацией -->
-      <section class="mt-12 last-blog">
-        <h2
-          class="text-3xl font-bold text-center mb-8 text-red-600 animate-slide"
-        >
-          Последние статьи
-        </h2>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div
-            class="bg-white p-4 rounded-lg shadow-md transform transition hover:scale-105"
-          >
+      <section class="custom-section-recipe last-blog">
+        <h2 class="custom-section-title animate-slide">Последние статьи</h2>
+        <div class="custom-grid">
+          <div class="custom-card">
             <img
               src="assets/images/recipe5.jpg"
               alt="Статья"
-              class="w-full h-48 object-cover rounded-lg mb-4"
+              class="custom-card-image"
             />
-            <h3 class="font-bold mb-2">Секреты итальянской кухни</h3>
-            <p class="text-gray-600 mb-4">
+            <h3 class="custom-card-heading">Секреты итальянской кухни</h3>
+            <p class="custom-card-text">
               Откройте для себя традиционные рецепты, техники приготовления и
               культуру питания...
             </p>
-            <a href="pages/recipe2.html" class="text-red-600 hover:underline"
-              >Читать</a
-            >
+            <a href="pages/recipe2.html" class="custom-card-link">Читать</a>
           </div>
-          <div
-            class="bg-white p-4 rounded-lg shadow-md transform transition hover:scale-105"
-          >
+          <div class="custom-card">
             <img
               src="assets/images/recipe6.jpg"
               alt="Статья"
-              class="w-full h-48 object-cover rounded-lg mb-4"
+              class="custom-card-image"
             />
-            <h3 class="font-bold mb-2">Здоровое питание</h3>
-            <p class="text-gray-600 mb-4">
+            <h3 class="custom-card-heading">Здоровое питание</h3>
+            <p class="custom-card-text">
               Полезные советы, рецепты и научный подход к правильному питанию...
             </p>
-            <a href="pages/recipe6.html" class="text-red-600 hover:underline"
-              >Читать</a
-            >
+            <a href="pages/recipe6.html" class="custom-card-link">Читать</a>
           </div>
-          <div
-            class="bg-white p-4 rounded-lg shadow-md transform transition hover:scale-105"
-          >
+          <div class="custom-card">
             <img
               src="assets/images/recipe8.jpg"
               alt="Статья"
-              class="w-full h-48 object-cover rounded-lg mb-4"
+              class="custom-card-image"
             />
-            <h3 class="font-bold mb-2">Кулинарные традиции мира</h3>
-            <p class="text-gray-600 mb-4">
+            <h3 class="custom-card-heading">Кулинарные традиции мира</h3>
+            <p class="custom-card-text">
               Увлекательное путешествие по кулинарным традициям разных стран и
               континентов...
             </p>
-            <a href="pages/recipe8.html" class="text-red-600 hover:underline"
-              >Читать</a
-            >
+            <a href="pages/recipe8.html" class="custom-card-link">Читать</a>
           </div>
         </div>
       </section>
-      <section class="mb-12 px-6 py-8 master-class-block">
-        <h2 class="text-3xl font-bold text-center mb-8 text-red-600 logo-font">
-          Мастер-классы
-        </h2>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div
-            class="bg-white p-6 rounded-lg shadow-md transform hover:scale-110 transition-transform"
-          >
-            <h3 class="font-bold text-xl mb-4">Задание 2. Рисунок CSS</h3>
-            <p class="text-gray-600 mb-4">
+      <section class="custom-section-recipe master-class-block">
+        <h2 class="custom-section-title logo-font">Мастер-классы</h2>
+        <div class="custom-grid">
+          <div class="custom-card">
+            <h3 class="custom-card-heading">Задание 2. Рисунок CSS</h3>
+            <p class="custom-card-text">
               Научитесь готовить настоящую картинку с помощью стилевой таблицы
               pic.css
             </p>
-            <a
-              href="pages/task2.html"
-              class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
-              >Записаться</a
-            >
+            <a href="pages/task2.html" class="custom-card-button">Записаться</a>
           </div>
-          <div
-            class="bg-white p-6 rounded-lg shadow-md transform hover:scale-110 transition-transform"
-          >
-            <h3 class="font-bold text-xl mb-4">Задание 3. Flexbox</h3>
-            <p class="text-gray-600 mb-4">
+          <div class="custom-card">
+            <h3 class="custom-card-heading">Задание 3. Flexbox</h3>
+            <p class="custom-card-text">
               Секреты идеального flexbox'a и самых вкусных картинок
             </p>
-            <a
-              href="pages/task3.html"
-              class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
-              >Записаться</a
-            >
+            <a href="pages/task3.html" class="custom-card-button">Записаться</a>
           </div>
-
-          <div
-            class="bg-white p-6 rounded-lg shadow-md transform hover:scale-110 transition-transform"
-          >
-            <h3 class="font-bold text-xl mb-4">Задание 4. DOM</h3>
-            <p class="text-gray-600 mb-4">
+          <div class="custom-card">
+            <h3 class="custom-card-heading">Задание 4. DOM</h3>
+            <p class="custom-card-text">
               Интенсив по приготовлению слов, слов и еще раз слов?
             </p>
-            <a
-              href="pages/task4.html"
-              class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
-              >Записаться</a
-            >
+            <a href="pages/task4.html" class="custom-card-button">Записаться</a>
           </div>
-          <div
-            class="bg-white p-6 rounded-lg shadow-md transform hover:scale-110 transition-transform"
-          >
-            <h3 class="font-bold text-xl mb-4">
-              Задание 5. Перетаскивание объектов
-            </h3>
-            <p class="text-gray-600 mb-4">
+          <div class="custom-card">
+            <h3 class="custom-card-heading">Задание 5. Перетаскивание объектов</h3>
+            <p class="custom-card-text">
               Вопрос не в том, любите ли вы русскую кухню или шаверму в зелени,
               вопрос лишь в том, как быстро вы соберете картинку
             </p>
-            <a
-              href="pages/task5.html"
-              class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
-            >
-              Записаться
-            </a>
+            <a href="pages/task5.html" class="custom-card-button">Записаться</a>
           </div>
         </div>
       </section>
 
       <!-- Переключаемые списки рецептов -->
-      <section class="mb-12">
-        <h2 class="text-3xl font-bold text-center mb-8 text-red-600 logo-font">
-          Рецепты
-        </h2>
-        <div class="flex justify-center mb-6">
+      <section class="custom-section-recipe">
+        <h2 class="custom-section-title logo-font">Рецепты</h2>
+        <div class="custom-tabs">
           <button
             onclick="showRecipes('russian')"
-            class="mx-2 px-4 py-2 recipe-tab active-tab hover:bg-red-50 rounded-lg"
+            class="custom-tab active-tab"
             data-category="russian"
           >
             Русская кухня
           </button>
           <button
             onclick="showRecipes('italian')"
-            class="mx-2 px-4 py-2 recipe-tab hover:bg-red-50 rounded-lg"
+            class="custom-tab"
             data-category="italian"
           >
             Итальянская кухня
           </button>
           <button
             onclick="showRecipes('asian')"
-            class="mx-2 px-4 py-2 recipe-tab hover:bg-red-50 rounded-lg"
+            class="custom-tab"
             data-category="asian"
           >
             Азиатская кухня
           </button>
         </div>
-        <div id="recipeList" class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div id="recipeList" class="custom-grid">
           <!-- Рецепты будут динамически загружаться через JavaScript -->
         </div>
       </section>
 
       <!-- Опросник -->
-      <section class="mb-12">
-        <div class="bg-white p-8 rounded-lg shadow-md">
-          <h2 class="text-2xl font-bold mb-6 text-red-600 logo-font">
-            Опрос о кулинарных предпочтениях
-          </h2>
+      <section class="custom-section-op">
+        <div class="custom-form-container">
+          <h2 class="custom-form-title">Опрос о кулинарных предпочтениях</h2>
           <form>
-            <div class="mb-4">
-              <label class="block mb-2"
-                >Какая кухня вам нравится больше всего?</label
-              >
-              <select class="w-full p-2 border rounded">
+            <div class="custom-form-group">
+              <label class="custom-form-label">Какая кухня вам нравится больше всего?</label>
+              <select class="custom-form-select">
                 <option>Русская</option>
                 <option>Итальянская</option>
                 <option>Азиатская</option>
                 <option>Другая</option>
               </select>
             </div>
-            <div class="mb-4">
-              <label class="block mb-2">Как часто вы готовите дома?</label>
-              <div>
-                <label class="inline-flex items-center mr-4">
+            <div class="custom-form-group">
+              <label class="custom-form-label">Как часто вы готовите дома?</label>
+              <div class="custom-radio-group">
+                <label class="custom-radio-label">
                   <input type="radio" name="cookingFrequency" value="daily" />
-                  <span class="ml-2">Каждый день</span>
+                  <span>Каждый день</span>
                 </label>
-                <label class="inline-flex items-center mr-4">
+                <label class="custom-radio-label">
                   <input type="radio" name="cookingFrequency" value="weekly" />
-                  <span class="ml-2">Несколько раз в неделю</span>
+                  <span>Несколько раз в неделю</span>
                 </label>
-                <label class="inline-flex items-center">
+                <label class="custom-radio-label">
                   <input type="radio" name="cookingFrequency" value="rarely" />
-                  <span class="ml-2">Редко</span>
+                  <span>Редко</span>
                 </label>
               </div>
             </div>
-            <button
-              type="submit"
-              class="bg-red-600 text-white px-6 py-2 rounded hover:bg-red-700"
-            >
-              Отправить
-            </button>
+            <button type="submit" class="custom-form-button">Отправить</button>
           </form>
         </div>
       </section>
 
       <!-- Интерактивный калькулятор калорийности -->
-      <section class="mb-12 bg-white p-8 rounded-lg shadow-md">
-        <h2 class="text-3xl font-bold text-center mb-8 text-red-600 logo-font">
-          Калькулятор калорийности
-        </h2>
-        <div class="grid md:grid-cols-2 gap-6">
-          <div>
-            <label class="block mb-2">Выберите продукт</label>
-            <select
-              id="foodSelect"
-              class="w-full p-2 border rounded interactive-element"
-            >
+      <section class="custom-section-op">
+        <h2 class="custom-section-title">Калькулятор калорийности</h2>
+        <div class="custom-grid">
+          <div class="custom-form-group">
+            <label class="custom-form-label">Выберите продукт</label>
+            <select id="foodSelect" class="custom-form-select interactive-element">
               <option>Курица (100г)</option>
               <option>Говядина (100г)</option>
               <option>Рыба (100г)</option>
               <option>Рис (100г)</option>
             </select>
           </div>
-          <div>
-            <label class="block mb-2">Количество (г)</label>
+          <div class="custom-form-group">
+            <label class="custom-form-label">Количество (г)</label>
             <input
               type="number"
               id="foodAmount"
-              class="w-full p-2 border rounded interactive-element"
+              class="custom-form-input interactive-element"
               value="100"
             />
           </div>
-          <div class="md:col-span-2">
-            <button
-              onclick="calculateCalories()"
-              class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700"
-            >
+          <div class="custom-form-button-container">
+            <button onclick="calculateCalories()" class="custom-form-button">
               Рассчитать калории
             </button>
           </div>
-          <div
-            id="caloriesResult"
-            class="md:col-span-2 text-center text-xl font-bold"
-          ></div>
+          <div id="caloriesResult" class="custom-result"></div>
         </div>
       </section>
 
       <!-- Интерактивная карта кухонь мира -->
-      <section class="mb-12">
-        <h2 class="text-3xl font-bold text-center mb-8 text-red-600 logo-font">
-          Кулинарная карта мира
-        </h2>
-        <div class="grid md:grid-cols-3 gap-6">
-          <div
-            class="interactive-card bg-white p-6 rounded-lg shadow-md text-center interactive-element hover:bg-red-50"
-          >
-            <img
-              src="assets/images/map-italy.png"
-              alt="Италия"
-              class="w-full h-48 object-cover rounded-lg mb-4"
-            />
-            <h3 class="font-bold text-xl mb-2">Италия</h3>
-            <p class="text-gray-600">Пицца, паста, тирамису</p>
-          </div>
-          <div
-            class="interactive-card bg-white p-6 rounded-lg shadow-md text-center interactive-element hover:bg-red-50"
-          >
-            <img
-              src="assets/images/map-japan.png"
-              alt="Япония"
-              class="w-full h-48 object-cover rounded-lg mb-4"
-            />
-            <h3 class="font-bold text-xl mb-2">Япония</h3>
-            <p class="text-gray-600">Суши, роллы, темпура</p>
-          </div>
-          <div
-            class="interactive-card bg-white p-6 rounded-lg shadow-md text-center interactive-element hover:bg-red-50"
-          >
-            <img
-              src="assets/images/map-mexico.png"
-              alt="Мексика"
-              class="w-full h-48 object-cover rounded-lg mb-4"
-            />
-            <h3 class="font-bold text-xl mb-2">Мексика</h3>
-            <p class="text-gray-600">Тако, гуакамоле, начос</p>
-          </div>
+    <section class="custom-section-op">
+      <h2 class="custom-section-title">Кулинарная карта мира</h2>
+      <div class="custom-grid">
+        <div class="custom-card interactive-element">
+          <img
+            src="assets/images/map-italy.png"
+            alt="Италия"
+            class="custom-card-image"
+          />
+          <h3 class="custom-card-heading">Италия</h3>
+          <p class="custom-card-text">Пицца, паста, тирамису</p>
         </div>
-      </section>
+        <div class="custom-card interactive-element">
+          <img
+            src="assets/images/map-japan.png"
+            alt="Япония"
+            class="custom-card-image"
+          />
+          <h3 class="custom-card-heading">Япония</h3>
+          <p class="custom-card-text">Суши, роллы, темпура</p>
+        </div>
+        <div class="custom-card interactive-element">
+          <img
+            src="assets/images/map-mexico.png"
+            alt="Мексика"
+            class="custom-card-image"
+          />
+          <h3 class="custom-card-heading">Мексика</h3>
+          <p class="custom-card-text">Тако, гуакамоле, начос</p>
+        </div>
+      </div>
+    </section>
 
       <!-- Интерактивный генератор списка покупок -->
-      <section class="mb-12 bg-white p-8 rounded-lg shadow-md">
-        <h2 class="text-3xl font-bold text-center mb-8 text-red-600 logo-font">
-          Генератор списка покупок
-        </h2>
-        <div>
+      <section class="custom-shopping-section">
+        <h2 class="custom-shopping-title">Генератор списка покупок</h2>
+        <div class="custom-shopping-content">
           <input
             type="text"
             id="ingredientInput"
-            class="w-full p-2 border rounded mb-4"
+            class="custom-shopping-input"
             placeholder="Введите ингредиент"
           />
           <button
             onclick="addIngredient()"
-            class="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 mb-4"
+            class="custom-add-button"
           >
             Добавить в список
           </button>
-          <ul id="shoppingList" class="list-disc pl-5"></ul>
+          <ul id="shoppingList" class="custom-shopping-list"></ul>
           <button
             onclick="clearList()"
-            class="w-full bg-gray-200 text-gray-700 py-2 rounded mt-4"
+            class="custom-clear-button"
           >
             Очистить список
           </button>
         </div>
       </section>
       <!-- Интерактивный блок рецептов -->
-      <section class="grid md:grid-cols-3 gap-6 my-12">
-        <div
-          class="recipe-card bg-white rounded-lg p-6 shadow-lg interactive-element"
-        >
-          <div class="recipe-image mb-4 overflow-hidden rounded-lg">
-            <img
-              src="assets/images/recipe_last_m.jpg"
-              class="w-full h-48 object-cover transform hover:scale-110 transition-transform"
-            />
+      <section class="recipe-section">
+        <div class="recipe-card interactive-element">
+          <div class="recipe-image">
+            <img src="assets/images/recipe_last_m.jpg" alt="Пицца Маргарита">
           </div>
-          <h3 class="text-xl font-bold mb-2">Пицца Маргарита</h3>
-          <div class="flex justify-between items-center">
-            <span class="text-gray-500">30 минут</span>
-            <button
-              class="bg-red-500 text-white px-3 py-1 rounded-full pulse-animation"
-            >
-              Готовить
-            </button>
+          <h3>Пицца Маргарита</h3>
+          <div class="recipe-footer">
+            <span class="cooking-time">30 минут</span>
+            <button class="cook-button pulse-animation">Готовить</button>
           </div>
         </div>
-
-        <div
-          class="recipe-card bg-white rounded-lg p-6 shadow-lg interactive-element"
-        >
-          <div class="recipe-image mb-4 overflow-hidden rounded-lg">
-            <img
-              src="assets/images/recipe_last_ss.jpeg"
-              class="w-full h-48 object-cover transform hover:scale-110 transition-transform"
-            />
+      
+        <div class="recipe-card interactive-element">
+          <div class="recipe-image">
+            <img src="assets/images/recipe_last_ss.jpeg" alt="Суши Сет">
           </div>
-          <h3 class="text-xl font-bold mb-2">Суши Сет</h3>
-          <div class="flex justify-between items-center">
-            <span class="text-gray-500">45 минут</span>
-            <button
-              class="bg-red-500 text-white px-3 py-1 rounded-full pulse-animation"
-            >
-              Готовить
-            </button>
+          <h3>Суши Сет</h3>
+          <div class="recipe-footer">
+            <span class="cooking-time">45 минут</span>
+            <button class="cook-button pulse-animation">Готовить</button>
           </div>
         </div>
-
-        <div
-          class="recipe-card bg-white rounded-lg p-6 shadow-lg interactive-element"
-        >
-          <div class="recipe-image mb-4 overflow-hidden rounded-lg">
-            <img
-              src="assets/images/recipe_last_l.jpg"
-              class="w-full h-48 object-cover transform hover:scale-110 transition-transform"
-            />
+      
+        <div class="recipe-card interactive-element">
+          <div class="recipe-image">
+            <img src="assets/images/recipe_last_l.jpg" alt="Лазанья">
           </div>
-          <h3 class="text-xl font-bold mb-2">Лазанья</h3>
-          <div class="flex justify-between items-center">
-            <span class="text-gray-500">60 минут</span>
-            <button
-              class="bg-red-500 text-white px-3 py-1 rounded-full pulse-animation"
-            >
-              Готовить
-            </button>
+          <h3>Лазанья</h3>
+          <div class="recipe-footer">
+            <span class="cooking-time">60 минут</span>
+            <button class="cook-button pulse-animation">Готовить</button>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="bg-white mt-12 py-8">
-      <div class="container mx-auto px-6 text-center">
-        <p class="text-gray-600">
+    <footer class="custom-footer">
+      <div class="footer-container">
+        <p class="footer-text">
           &copy; 2024 Кулинарный мир. Все права защищены.
         </p>
       </div>
@@ -707,10 +557,10 @@
         // Загружаем рецепты выбранной категории
         recipes[category].forEach((recipe) => {
           const recipeCard = `
-                    <div class="bg-white p-4 rounded-lg shadow-md">
-                        <img src="${recipe.image}" alt="${recipe.name}" class="w-full h-48 object-cover rounded-lg mb-4 interactive-element hover:bg-red-50">
-                        <h3 class=" font-bold text-center">${recipe.name}</h3>
-                    </div>
+                  <div class="recipe-card">
+                    <img src="${recipe.image}" alt="${recipe.name}" class="recipe-image">
+                    <h3 class="recipe-title">${recipe.name}</h3>
+                  </div>
                 `;
           recipeList.innerHTML += recipeCard;
         });
@@ -718,14 +568,15 @@
 
       // Показываем русские рецепты по умолчанию
       showRecipes("russian");
-      const calorieData = {
+
+
+      function calculateCalories() {
+        const calorieData = {
         "Курица (100г)": 239,
         "Говядина (100г)": 250,
         "Рыба (100г)": 206,
         "Рис (100г)": 130,
       };
-
-      function calculateCalories() {
         const foodSelect = document.getElementById("foodSelect");
         const foodAmount = document.getElementById("foodAmount");
         const resultDiv = document.getElementById("caloriesResult");
