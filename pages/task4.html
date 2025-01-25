@@ -123,22 +123,28 @@
                 </button>
               </div>
             </nav>
-            <div id="mobile-menu" class="custom-mobile-menu">
-              <ul class="custom-mobile-links">
-                <li>
-                  <a href="../index.html"  class="custom-mobile-link">Главная</a>
-                </li>
-                <li>
-                  <a href="../index.html"  class="custom-mobile-link">История еды</a>
-                </li>
-                <li>
-                  <a href="../index.html"  class="custom-mobile-link">Блог</a>
-                </li>
-                <li>
-                  <a href="../index.html"  class="custom-mobile-link">Контакты</a>
-                </li>
-              </ul>
-            </div>
+            <div id="mobile-menu" class="custom-mobile-menu" >
+                <ul class="custom-mobile-links">
+                  <li>
+                    <a href="../index.html" class="custom-mobile-link">Последние статьи</a>
+                  </li>
+                  <li>
+                    <a href="../index.html" class="custom-mobile-link">Мастер классы</a>
+                  </li>
+                  <li>
+                    <a href="../index.html" class="custom-mobile-link">Рецепты</a>
+                  </li>
+                  <li>
+                    <a href="../index.html" class="custom-mobile-link">Опросник</a>
+                  </li>
+                  <li>
+                    <a href="../index.html"class="custom-mobile-link">Калькулятор калорийности</a>
+                  </li>
+                  <li>
+                    <a href="../index.html" class="custom-mobile-link">Кулинарная карта мира</a>
+                  </li>
+                </ul>
+              </div>
           </header>
     
         <main class="custom-main">
@@ -210,15 +216,27 @@
             });
         }
 
-        // Получаем кнопку меню и список навигации
-        const menuButton = document.getElementById('menu-button');
-        const navList = document.querySelector('nav ul');
+        const menuButton = document.getElementById("menu-button");
+      const mobileMenu = document.getElementById("mobile-menu");
 
-        // Обработчик клика по кнопке
-        menuButton.addEventListener('click', () => {
-            // Переключаем видимость меню
-            navList.classList.toggle('hidden');
-        });
+      menuButton.addEventListener("click", () => {
+  const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+  menuButton.setAttribute('aria-expanded', !isExpanded);
+  mobileMenu.classList.toggle('active');
+  mobileMenu.classList.toggle('hidden');
+});
+      document.addEventListener('click', (e) => {
+        if (!menuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+          mobileMenu.classList.remove('active');
+          mobileMenu.classList.add('hidden');
+        }
+      });
+      document.querySelectorAll('.custom-mobile-link').forEach(link => {
+  link.addEventListener('click', () => {
+    mobileMenu.classList.remove('active');
+    mobileMenu.classList.add('hidden');
+  });
+});
     </script>
 </body>
 </html>

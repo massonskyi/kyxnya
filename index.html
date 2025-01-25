@@ -162,16 +162,22 @@
     <div id="mobile-menu" class="custom-mobile-menu" >
       <ul class="custom-mobile-links">
         <li>
-          <a href="#" class="custom-mobile-link">Рецепты</a>
+          <a href="#last-stand-history" class="custom-mobile-link">Последние статьи</a>
         </li>
         <li>
-          <a href="#" class="custom-mobile-link">История еды</a>
+          <a href="#the-master-classes" class="custom-mobile-link">Мастер классы</a>
         </li>
         <li>
-          <a href="#" class="custom-mobile-link">Блог</a>
+          <a href="#recipe-block-link" class="custom-mobile-link">Рецепты</a>
         </li>
         <li>
-          <a href="#" class="custom-mobile-link">Контакты</a>
+          <a href="#oprosnik" class="custom-mobile-link">Опросник</a>
+        </li>
+        <li>
+          <a href="#calc-calor" class="custom-mobile-link">Калькулятор калорийности</a>
+        </li>
+        <li>
+          <a href="#kylinar-maps" class="custom-mobile-link">Кулинарная карта мира</a>
         </li>
       </ul>
     </div>
@@ -232,7 +238,7 @@
       </section>
 
       <!-- Последние статьи с анимацией -->
-      <section class="custom-section-recipe last-blog">
+      <section class="custom-section-recipe last-blog" id="last-stand-history">
         <h2 class="custom-section-title animate-slide">Последние статьи</h2>
         <div class="custom-grid">
           <div class="custom-card">
@@ -277,7 +283,7 @@
       </section>
       <section class="custom-section-recipe master-class-block">
         <h2 class="custom-section-title logo-font">Мастер-классы</h2>
-        <div class="custom-grid">
+        <div class="custom-grid" id="the-master-classes">
           <div class="custom-card">
             <h3 class="custom-card-heading">Задание 2. Рисунок CSS</h3>
             <p class="custom-card-text">
@@ -312,7 +318,7 @@
       </section>
 
       <!-- Переключаемые списки рецептов -->
-      <section class="custom-section-recipe">
+      <section class="custom-section-recipe"  id="recipe-block-link">
         <h2 class="custom-section-title logo-font">Рецепты</h2>
         <div class="custom-tabs">
           <button
@@ -343,11 +349,11 @@
       </section>
 
       <!-- Опросник -->
-      <section class="custom-section-op">
+      <section class="custom-section-op" id="oprosnik">
         <div class="custom-form-container">
           <h2 class="custom-form-title">Опрос о кулинарных предпочтениях</h2>
           <form>
-            <div class="custom-form-group">
+            <div class="custom-form-group" >
               <label class="custom-form-label">Какая кухня вам нравится больше всего?</label>
               <select class="custom-form-select">
                 <option>Русская</option>
@@ -379,9 +385,9 @@
       </section>
 
       <!-- Интерактивный калькулятор калорийности -->
-      <section class="custom-section-calc">
+      <section class="custom-section-calc" id="calc-calor">
         <h2 class="custom-section-title">Калькулятор калорийности</h2>
-        <div class="custom-grid-calc">
+        <div class="custom-grid-calc" >
           <div class="custom-form-group-calc">
             <label class="custom-form-label">Выберите продукт</label>
             <select id="foodSelect" class="custom-form-select interactive-element">
@@ -410,7 +416,7 @@
       </section>
 
       <!-- Интерактивная карта кухонь мира -->
-    <section class="custom-section-op">
+    <section class="custom-section-op" id="kylinar-maps">
       <h2 class="custom-section-title">Кулинарная карта мира</h2>
       <div class="custom-grid">
         <div class="custom-card interactive-element">

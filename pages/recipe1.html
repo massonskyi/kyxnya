@@ -51,7 +51,7 @@
         </div>
     </div>
 
-    <header class="bg-white shadow-md">
+    <header class="bg-white shadow-md relative"> <!-- Добавили relative -->
         <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
             <img src="../assets/images/logo.png" alt="Кулинарный мир" class="w-16 h-16 object-cover md:w-20 md:h-20">
             <div class="text-2xl font-bold text-red-600 animate-slide">Кулинарный мир</div>
@@ -61,13 +61,60 @@
                 <li><a href="../index.html" class="text-gray-700 hover:text-red-600 transition transform hover:scale-110">Блог</a></li>
                 <li><a href="../index.html" class="text-gray-700 hover:text-red-600 transition transform hover:scale-110">Мастер классы</a></li>
             </ul>
-            <div class="md:hidden">
-                <button id="menu-button" class="text-gray-700 hover:text-red-600 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-                    </svg>
-                </button>
-            </div>
+    <!-- Мобильная кнопка меню -->
+    <div class="md:hidden">
+        <button 
+          id="menu-button"
+          class="text-gray-700 hover:text-red-600 focus:outline-none transition-transform"
+          aria-label="Меню"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"/>
+          </svg>
+        </button>
+      </div>
+    </nav>
+  
+    <!-- Мобильное меню -->
+  <div id="mobile-menu" 
+       class="md:hidden absolute top-full left-0 w-full bg-white shadow-lg z-50 
+             transform -translate-y-full opacity-0 transition-all duration-300"
+       style="display: none;">
+      <ul class="px-4 py-2 space-y-2">
+        <li>
+          <a 
+            href="../index.html" 
+            class="block px-4 py-3 text-gray-700 hover:bg-red-50 rounded-lg transition-colors"
+          >
+            Главная
+          </a>
+        </li>
+        <li>
+          <a 
+            href="../index.html" 
+            class="block px-4 py-3 text-gray-700 hover:bg-red-50 rounded-lg transition-colors"
+          >
+            История еды
+          </a>
+        </li>
+        <li>
+          <a 
+            href="../index.html" 
+            class="block px-4 py-3 text-gray-700 hover:bg-red-50 rounded-lg transition-colors"
+          >
+            Блог
+          </a>
+        </li>
+        <li>
+          <a 
+            href="../index.html" 
+            class="block px-4 py-3 text-gray-700 hover:bg-red-50 rounded-lg transition-colors"
+          >
+            Мастер классы
+          </a>
+        </li>
+      </ul>
+    </div>
         </nav>
     </header>
 
@@ -95,15 +142,31 @@
         </div>
     </footer>
     <script>
-        // Получаем кнопку меню и список навигации
-        const menuButton = document.getElementById('menu-button');
-        const navList = document.querySelector('nav ul');
+document.addEventListener('DOMContentLoaded', () => {
+  const menuButton = document.getElementById('menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
 
-        // Обработчик клика по кнопке
-        menuButton.addEventListener('click', () => {
-            // Переключаем видимость меню
-            navList.classList.toggle('hidden');
-        });
+  menuButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+    mobileMenu.style.display = 'block';
+    setTimeout(() => {
+      mobileMenu.classList.toggle('opacity-0');
+      mobileMenu.classList.toggle('translate-y-0');
+      mobileMenu.classList.toggle('-translate-y-full');
+    }, 10);
+  });
+
+  // Закрытие меню
+  document.addEventListener('click', (e) => {
+    if (!mobileMenu.contains(e.target) && !menuButton.contains(e.target)) {
+      mobileMenu.classList.add('-translate-y-full', 'opacity-0');
+      mobileMenu.classList.remove('translate-y-0');
+      setTimeout(() => {
+        mobileMenu.style.display = 'none';
+      }, 300);
+    }
+  });
+});
     </script>
 </body>
 </html>
